@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+
+# Never commit these: third-party copyrighted article text
+data/eskape_corpus.json
+data/eskape_triage_raw.json
+data/fulltext/
+data/eskape_fulltext/
+data/*.cache

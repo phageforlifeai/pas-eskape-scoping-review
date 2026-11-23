@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this code or dataset, please cite the manuscript and this repository."
+type: software
+title: "Code and data for: Phage-antibiotic synergy in ESKAPE pathogens - a scoping review of antibiotic-partner selection"
+abstract: >-
+  Extraction dataset, derived data tables, screening audit trail and analysis code
+  reproducing every number, table and statistic in the accompanying scoping review
+  of antibiotic-partner selection for phage-antibiotic synergy against ESKAPE pathogens.
+authors:
+  - family-names: "[Family name]"
+    given-names: "[Given names]"
+    affiliation: "[Department, Institution, City, Country]"
+  - family-names: "[Family name]"
+    given-names: "[Given names]"
+    affiliation: "[Department, Institution, City, Country]"
+  - family-names: "[Family name]"
+    given-names: "[Given names]"
+    affiliation: "[Department, Institution, City, Country]"
+repository-code: "https://github.com/[USERNAME]/[REPO-NAME]"
+url: "https://github.com/[USERNAME]/[REPO-NAME]"
+license: MIT
+keywords:
+  - bacteriophage
+  - phage-antibiotic synergy
+  - ESKAPE
+  - antimicrobial resistance
+  - scoping review
+  - reproducibility
+version: "1.0.0"
+date-released: "2026-11-23"
