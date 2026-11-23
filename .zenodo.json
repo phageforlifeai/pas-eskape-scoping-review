@@ -2,15 +2,28 @@
   "title": "Code and data for: Phage-antibiotic synergy in ESKAPE pathogens - a scoping review of antibiotic-partner selection",
   "description": "<p>Extraction dataset (419 antibiotic-level observations from 157 studies), derived data tables, complete screening audit trail for 4,402 records, and analysis code that reproduces every number, table and statistic in the accompanying scoping review. The repository includes <code>scripts/validate_results.py</code>, which independently recomputes and asserts every reported statistic (172 checks, all passing) without relying on stored derived tables.</p><p>Article abstracts and full texts retrieved during screening are third-party copyrighted material and are not redistributed; the screening audit file records the bibliographic identifier, relevance score and scoring rationale for every screened record, which is sufficient to reproduce the screening decisions and re-retrieve any record.</p>",
   "upload_type": "software",
-  "license": "MIT",
+  "license": "mit",
   "access_right": "open",
-  "keywords": ["bacteriophage", "phage-antibiotic synergy", "ESKAPE", "antimicrobial resistance", "scoping review", "reproducibility"],
-  "creators": [
-    {"name": "SURNAME1, Forename1", "affiliation": "Department, Institution, City, Country"},
-    {"name": "SURNAME2, Forename2", "affiliation": "Department, Institution, City, Country"},
-    {"name": "SURNAME3, Forename3", "affiliation": "Department, Institution, City, Country"}
+  "keywords": [
+    "bacteriophage",
+    "phage-antibiotic synergy",
+    "ESKAPE",
+    "antimicrobial resistance",
+    "scoping review",
+    "reproducibility"
   ],
-  "related_identifiers": [
-    {"identifier": "10.xxxx/manuscript-doi-when-assigned", "relation": "isSupplementTo", "scheme": "doi"}
+  "creators": [
+    {
+      "name": "SURNAME1, Forename1",
+      "affiliation": "Department, Institution, City, Country"
+    },
+    {
+      "name": "SURNAME2, Forename2",
+      "affiliation": "Department, Institution, City, Country"
+    },
+    {
+      "name": "SURNAME3, Forename3",
+      "affiliation": "Department, Institution, City, Country"
+    }
   ]
 }
