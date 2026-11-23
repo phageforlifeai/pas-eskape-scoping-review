@@ -46,11 +46,10 @@ python scripts/validate_results.py
 Expected output ends with:
 
 ```
-96 checks: 93 PASS, 0 FAIL, 3 WARN
+RESULT: 172 PASS, 0 FAIL, 0 WARN
 ```
 
-(The three WARNs are documented discrepancies — see `docs/KNOWN_DISCREPANCIES.md`.)
-
+Places where a naive recalculation deliberately differs are printed as [INFO] lines and explained in docs/KNOWN_DISCREPANCIES.md.
 ## Full reproduction
 
 ```bash
