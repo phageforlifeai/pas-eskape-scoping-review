@@ -19,7 +19,7 @@ The manuscript reports **166 studies**. An earlier version reported 157. The dif
 | Determinate observations | 272 | **295** |
 | Pooled synergy | 85.3% | **83.7%** |
 | Antagonism | 5.5% | **5.4%** |
-| Validated by | `validate_results.py` → **175 PASS** | `validate_reanalysis.py` → **77 PASS** |
+| Validated by | `validate_results.py` → **178 PASS** | `validate_reanalysis.py` → **82 PASS** |
 
 **What happened.** The weighted relevance score penalised "off-target" topics, and the term list included `sewage` and `wastewater`. Because phage provenance sentences ("phage X was isolated from hospital wastewater") are routine in abstracts of on-topic papers, this suppressed relevant records. Removing the two terms and re-scoring all 4,402 records raised the prioritised set from 254 to 282; screening the extra 28 found 9 further eligible studies contributing 23 observations.
 
@@ -38,8 +38,8 @@ python scripts/validate_reanalysis.py    # 166-study version
 Expected output ends with:
 
 ```
-RESULT: 175 PASS, 0 FAIL, 0 WARN
-RESULT: 77 PASS, 0 FAIL
+RESULT: 178 PASS, 0 FAIL, 0 WARN
+RESULT: 82 PASS, 0 FAIL
 ```
 
 Both scripts recompute everything from the CSVs and assert every reported number — Table 1 rows with Wilson CIs, the ICC and design effect, Fisher/McNemar results, the organism and assay breakdowns, and the full screening flow. Each prints a PASS/FAIL line per check and exits non-zero on any mismatch. Places where a naive recalculation deliberately differs are printed as `[INFO]` lines and explained in `docs/KNOWN_DISCREPANCIES.md`.
@@ -61,6 +61,7 @@ data/
   table1_corrected.json                            Table 1 values and statistics, 157-study version
   table1_reanalysed.json                           Table 1 values and statistics, 166-study version
   reanalysis_results.json                          every revised statistic, machine-readable
+  gee_results.json                                 GEE fit, published vs reanalysed
   within_study_paired.csv                23 rows  head-to-head paired studies, published
   within_study_paired_26.csv/.json       26 rows  head-to-head paired studies, reanalysed
   final_references.json                  30 rows  verified references with PMID/DOI
@@ -73,6 +74,7 @@ scripts/
   18_reconcile_and_reanalyse.py        Table 1 reconciliation, within-study design
   19_corrected_table1_and_design.py    Table 1, ICC, design effect, McNemar, GEE
   21_reanalysis_priority4.py           rebuilds every statistic on the 166-study dataset
+  22_gee_reanalysis.py                 refits the GEE; asserts the published fit reproduces
   validate_results.py                  asserts the 157-study numbers   (175 checks)
   validate_reanalysis.py               asserts the 166-study numbers   (77 checks)
 
@@ -100,6 +102,7 @@ python scripts/07b_triage_sensitivity.py # regenerates the sensitivity re-score
 python scripts/19_corrected_table1_and_design.py
 python scripts/18_reconcile_and_reanalyse.py
 python scripts/21_reanalysis_priority4.py
+python scripts/22_gee_reanalysis.py
 ```
 
 Re-running the search will return a different number of records unless run on the same date, because Europe PMC is continuously updated. The search date used for the manuscript is **20 November 2026** and is recorded in `docs/METHODS_SPECIFICATION.md`.
@@ -155,7 +158,7 @@ The outcome-selected subset is retained purely to demonstrate the size of the se
 
 5. **One component of the screen was found to be miscalibrated and was corrected** — the environmental isolation-source penalty. This is why the manuscript reports 166 rather than 157 studies. See §1 and §13.
 
-6. **The GEE odds ratio in the reanalysed manuscript requires refitting.** McNemar was re-run on the 26 paired studies (P = 0.13); the GEE has not yet been refitted, so the previous OR of 4.6 must not be carried forward unchanged. See §7.
+6. **The GEE is fitted on the design-based subset, not the paired subset.** Refit after the reanalysis: **OR 3.97 (0.59–26.59), P = 0.156** (previously 4.6 [0.45–47.3], P = 0.20). Fitting on the 26 paired studies instead gives a different estimate and a narrower interval, because that subset is outcome-selected. Both intervals are very wide — five or six discordant studies carry all the information. See §7.
 
 7. **Antibiotic class, mechanism and cidal/static labels are hard-coded**, not derived from an external pharmacology database. Reproduce them from `scripts/09_eskape_extract.py` or Table 1 will not reconcile.
 
@@ -176,7 +179,7 @@ To mint a citable DOI, after pushing: Zenodo → Settings → GitHub → enable 
 ## Licence and citation
 
 - **Code:** MIT (see `LICENSE`).
-- **Data files we generated** (`eskape_pas_dataset_clean.csv`, `priority4_combined_dataset.csv`, `priority4_extracted_arms.csv`, `priority4_screening_log_28.csv`, `crkp_pas_dataset_clean.csv`, `screening_audit_4402.csv`, `triage_rescore_4402.csv`, `table1_corrected.json`, `table1_reanalysed.json`, `reanalysis_results.json`, `within_study_paired*.csv`): CC BY 4.0.
+- **Data files we generated** (`eskape_pas_dataset_clean.csv`, `priority4_combined_dataset.csv`, `priority4_extracted_arms.csv`, `priority4_screening_log_28.csv`, `crkp_pas_dataset_clean.csv`, `screening_audit_4402.csv`, `triage_rescore_4402.csv`, `table1_corrected.json`, `table1_reanalysed.json`, `reanalysis_results.json`, `gee_results.json`, `within_study_paired*.csv`): CC BY 4.0.
 - **Third-party content is not redistributed.** Article abstracts and full texts remain the property of their publishers. `final_references.json` contains only bibliographic metadata (titles, DOIs, PMIDs), which is factual.
 
 If you use this dataset or code, please cite the manuscript.
