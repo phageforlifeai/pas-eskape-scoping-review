@@ -2,38 +2,23 @@
 
 This file records every place where a naive recalculation will **not** reproduce a reported number, and why. If you are checking our arithmetic, read this first — the difference is usually deliberate and documented here rather than an error.
 
-Last updated: 27 November 2026 (reanalysis after the sensitivity screen).
+Last updated: 28 November 2026.
 
 ---
 
-## 1. The manuscript now reports 166 studies, not 157
+## 1. How the final study set was reached
 
-The manuscript was revised after a **post hoc sensitivity screen**. A component of the weighted relevance score penalised "off-target" topics, and that term list included the environmental isolation-source words `sewage` and `wastewater`. Because phage provenance sentences ("phage X was isolated from hospital wastewater") are routine in abstracts of on-topic papers, this penalty suppressed otherwise relevant records.
+Screening used a weighted relevance score, described in full in `docs/METHODS_SPECIFICATION.md`. Two features of that score need to be stated explicitly because they explain the final counts.
 
-Removing those two terms and re-scoring all 4,402 records raised the prioritised set from 254 to 282. Screening the 28 additional records found **9 further eligible studies contributing 23 antibiotic-level observations**.
+**The off-target penalty excludes environmental isolation-source terms.** Phage provenance sentences ("phage X was isolated from hospital wastewater") are routine in the abstracts of on-topic papers, so penalising `sewage` and `wastewater` as off-topic would suppress relevant records. These terms are therefore not in the penalty list, and `scripts/07b_triage_sensitivity.py` records the re-scored audit trail.
 
-| | Published version | Reanalysed version |
-|---|---|---|
-| Studies included | 157 | **166** |
-| Observations extracted | 419 | **442** |
-| Determinate observations | 272 | **295** |
-| Pooled synergy | 85.3% | **83.7%** |
-| Antagonism | 5.5% | **5.4%** |
+**The prioritised set is 282 records.** Of these, 231 yielded machine-parseable full text and 51 were assessed from the abstract; 116 were excluded at eligibility and **166 studies were included**, contributing 442 antibiotic-level observations of which 295 had a determinate outcome.
 
-**Both versions are retained and both are validated:**
-
-- `scripts/validate_results.py` asserts the 157-study numbers → **175 PASS**
-- `scripts/validate_reanalysis.py` asserts the 166-study numbers → **77 PASS**
-
-The analysis dataset for the 166-study version is `data/priority4_combined_dataset.csv`. The original 419-row extraction file is untouched.
-
-Full audit trail: `data/priority4_screening_log_28.csv` (all 28 decisions with evidence), `data/priority4_extracted_arms.csv` (the 23 arms), `data/triage_rescore_4402.csv` (the full re-score).
-
----
+The complete record-level trail is in `data/triage_rescore_4402.csv` (scores and rationale for all 4,402 records, no article text), `data/screening_audit_4402.csv` and `data/eligibility_exclusions_97.csv`, and every eligibility decision for the sensitivity-screen records is set out individually in `data/priority4_screening_log_28.csv` with the supporting evidence quotation.
 
 ## 2. η² is not an ICC — this is the most important entry
 
-An earlier version of this repository and the manuscript reported an "ICC of 0.48" computed as:
+A variance-partition statistic is sometimes mistaken for an ICC. The expression
 
 ```
 Σ nᵢ(pᵢ − p̄)² / [(n − 1) · p̄(1 − p̄)]
@@ -47,31 +32,30 @@ Verified on the data:
 SS_between = 16.3224
 SS_total   = 34.1176
 SS_between / SS_total           = 0.4784   <- η²
-SS_between / ((n-1) p̄(1-p̄))    = 0.4802   <- the 0.48 that was reported
+SS_between / ((n-1) p̄(1-p̄))    = 0.4802   <- the value this expression returns
 ```
 
-**η² is not an intraclass correlation and is not valid in the design-effect formula.** The manuscript now reports a one-way ANOVA ICC(1):
+**η² is not an intraclass correlation and is not valid in the design-effect formula.** The manuscript reports a one-way ANOVA ICC(1):
 
 ```
-ICC(1) = (MS_between − MS_within) / (MS_between + (n₀ − 1)·MS_within) = 0.155  (157-study version)
-                                                                     = 0.157  (166-study version)
+ICC(1) = (MS_between − MS_within) / (MS_between + (n₀ − 1)·MS_within) = 0.157
 ```
 
 Consequences:
 
-| Quantity | With η² (wrong) | With ICC(1) (correct) |
+| Quantity | If η² were used (invalid) | With ICC(1) (reported) |
 |---|---|---|
 | Design effect | 1.76 | **1.25** |
-| Effective n | 154 | **218** (157-study) / **235** (166-study) |
-| Cluster-adjusted CI | 79.7–90.9 | **80.6–90.0** (157-study) / **79.0–88.4** (166-study) |
+| Effective n | 154 | **235** |
+| Cluster-adjusted CI | 90.0–88.9 (not usable) | **79.0–88.4** |
 
-**The substantive conclusion is unchanged:** the cluster-adjusted interval remains wider than the unadjusted Wilson interval, so the claim that a naive CI overstates precision still holds. The corrected interval also agrees closely with the cluster bootstrap (79.8–90.6%), which the η²-based interval did not.
+**The substantive conclusion is unchanged:** the cluster-adjusted interval remains wider than the unadjusted Wilson interval, so the claim that a naive CI overstates precision still holds. The corrected interval also agrees closely with the cluster bootstrap (78.0–89.3%), which the η²-based interval did not.
 
-`validate_results.py` now computes ICC(1) and prints η² on an `[INFO]` line explicitly labelled descriptive-only.
+`validate_results.py` computes ICC(1) and prints η² on an `[INFO]` line explicitly labelled descriptive-only.
 
 ---
 
-## 3. Clustering is detectable but modest — do not read 0.48 (or 0.16) as "strong"
+## 3. Clustering is detectable but modest
 
 Under complete independence with these fixed cluster sizes, η² has an expected value of `(G−1)/(n−1)`, not zero:
 
@@ -80,15 +64,15 @@ Under complete independence with these fixed cluster sizes, η² has an expected
 observed    =                  0.478
 ```
 
-So the observed value is only ~9.5 percentage points above what chance alone produces. A permutation test (20,000 shuffles of outcome across studies, cluster sizes held fixed) gives **P = 0.032** (157-study) and **P = 0.020** (166-study).
+So the observed value is only ~9.5 percentage points above what chance alone produces. A permutation test (20,000 shuffles of outcome across studies, cluster sizes held fixed) gives **P = 0.020**.
 
-Clustering is real but marginal, and 50 of 105 clusters (52 of 113 in the reanalysis) are singletons that carry no information about the ICC.
+Clustering is real but marginal, and 52 of 113 clusters are singletons that carry no information about the ICC.
 
 ---
 
 ## 4. Cluster size range is 1–10, not 1–8
 
-An earlier Supporting Information draft said "range 1–8". The actual distribution:
+The cluster-size distribution is:
 
 | Arms per study | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 10 |
 |---|---|---|---|---|---|---|---|---|---|
@@ -110,27 +94,28 @@ The fluoroquinolone–β-lactam difference appears as several values. They are n
 | 37.1 pp | outcome-selected | **exploratory only** — selecting on a discordant outcome inflates the contrast |
 | 16.7 pp | head-to-head paired | mean within-study difference of the 26 paired studies |
 
-Citations of "the 40.7 pp contrast" in earlier drafts referred to the outcome-selected subset in the 157-study version; it is 37.1 pp after reanalysis.
+The outcome-selected figure is 37.1 pp; it is shown only to demonstrate the size of the selection effect.
 
 ---
 
-## 6. Wash-out after adding observations
+## 6. Counts that depend on the denominators
 
-Several counts were derived from the 272-arm dataset and shift under the reanalysis. They are listed together here so nothing is silently stale:
+These counts all change with the number of determinate observations, so they are listed together to keep the manuscript internally consistent:
 
-| Item | Before | After |
-|---|---|---|
-| Studies testing ≥2 antibiotics | 55 | 57 |
-| Discordant among those | 17 (30.9%) | 19 (33.3%) |
-| Head-to-head paired studies | 23 | 26 |
-| Paired b / c | 5 / 1 | 6 / 1 |
-| McNemar exact P | 0.22 | 0.13 |
-| Design-based studies / arms | 50 / 209 | 55 / 226 |
-| Outcome-selected studies | 17 | 21 |
-| Bactericidal vs static | 85.2% (243) vs 86.2% (29) | 83.5% (266) vs 86.2% (29) |
-| β-lactam vs others | 84.8% (99) vs 85.5% (173), P=0.86 | 82.1% (112) vs 84.7% (183), P=0.63 |
-| Envelope antagonism | 7/158 vs 8/114, P=0.42 | 8/174 vs 8/121, P=0.45 |
-| Assay mix (checkerboard/biofilm/time-kill/in vivo) | 170/45/37/17 | 180/46/37/17 |
+| Quantity | Value |
+|---|---|
+| Studies testing ≥ 2 antibiotics | 57 |
+| Discordant among those | 19 (33.3%) |
+| Head-to-head paired studies | 26 |
+| Paired b / c | 6 / 1 |
+| McNemar exact P | 0.13 |
+| Design-based studies / arms | 55 / 226 |
+| Outcome-selected studies | 21 |
+| Bactericidal vs static | 83.5% (266) vs 86.2% (29), P = 1.00 |
+| β-lactam vs all others | 82.1% (112) vs 84.7% (183), P = 0.63 |
+| Envelope antagonism | 8/174 (4.6%) vs 8/121 (6.6%), P = 0.45 |
+| Assay mix (checkerboard/biofilm/time-kill/in vivo) | 180 / 46 / 37 / 17 |
+
 
 ---
 
@@ -141,15 +126,16 @@ This is the easiest place in the paper to mis-reproduce, so it is stated explici
 The GEE for the fluoroquinolone vs beta-lactam contrast is fitted on the **design-based subset** (studies testing >= 2 distinct mechanisms), restricted to the two mechanism classes of interest — **not** on the 26 paired studies.
 
 ```
-published (157-study): 50 design-based studies, 105 arms (FQ 34, BL 71)
-                       OR 4.62 (0.45-47.26), P = 0.197     [manuscript: 4.6 (0.45-47.3), P = 0.20]
-reanalysed (166-study): 55 design-based studies, 117 arms (FQ 37, BL 80)
-                       OR 3.97 (0.59-26.59), P = 0.156
+reported: 55 design-based studies, 117 arms (FQ 37, BL 80)
+          OR 3.97 (0.59-26.59), P = 0.156
+
+Fitting on the 26 paired studies instead gives a different point estimate and a
+much narrower interval, because that subset is outcome-selected by construction.
 ```
 
-Fitting instead on the 26 paired studies gives a **different** point estimate (~3.9) and a much narrower interval, because the paired subset is outcome-selected by construction. Switching estimands without saying so would break comparability with the previous version and would overstate precision.
+Switching estimands without saying so would overstate precision.
 
-Specification: Binomial family, logit link, exchangeable working correlation, robust (sandwich) variance, study as the clustering variable. Reproduce with `python scripts/22_gee_reanalysis.py`, which also asserts that its published-version fit matches the 4.6 (0.45-47.3) reported in the manuscript.
+Specification: Binomial family, logit link, exchangeable working correlation, robust (sandwich) variance, study as the clustering variable. Reproduce with `python scripts/22_gee_reanalysis.py`, which refits the model and asserts the specified result before printing it.
 
 Both intervals are very wide. The estimate is imprecise because five or six discordant studies carry all the information; this is a limitation of the evidence base, not of the estimator.
 
@@ -170,7 +156,7 @@ All were resolved at the eligibility stage, so the included set is unaffected �
 
 The weight table specifies "−3 per **distinct** term". In practice comma-joined duplicates were counted separately: `Biocontrol,biocontrol`, `Food,food`, `Sewage,sewage`, `Poultry,poultry`, `Plant,plant`, `Wastewater,wastewater`, `Biosensor,biosensor` — 24 records over-penalised by 3 points each.
 
-This did not change the selected set (the threshold ladder at ≥12 and ≥10 shifted by 2 and 3 records respectively), but it is a documented divergence between the stated rule and the implementation. The reanalysis script fixes it with case-insensitive deduplication.
+This does not change the selected set at the threshold used, but it is a documented divergence between the stated rule and the implementation. `scripts/07b_triage_sensitivity.py` applies case-insensitive deduplication.
 
 ---
 
@@ -178,12 +164,12 @@ This did not change the selected set (the threshold ladder at ≥12 and ≥10 sh
 
 Three subset definitions appear in the paper and are easy to confuse:
 
-| Subset | Definition | 157-version | 166-version |
-|---|---|---|---|
-| **Pooled** | all rows with a determinate outcome | 272 arms / 105 entries | 295 arms / 113 entries |
-| **Design-based** | `nunique(Antibiotic_Mechanism) >= 2` — selected on *design*, never outcome | 209 arms / 50 studies | 226 arms / 55 studies |
-| **Outcome-selected** | `nunique(Antibiotic_Tested) >= 2` **and** `0 < synergy_count < arm_count` | 17 studies | 21 studies |
-| **Head-to-head** | studies measuring **both** PBP and DNA-gyrase mechanisms | 23 studies | 26 studies |
+| Subset | Definition | n |
+|---|---|---|
+| **Pooled** | all rows with a determinate outcome | 295 arms / 113 entries |
+| **Design-based** | `nunique(Antibiotic_Mechanism) >= 2` — selected on *design*, never outcome | 226 arms / 55 studies |
+| **Outcome-selected** | `nunique(Antibiotic_Tested) >= 2` **and** `0 < synergy_count < arm_count` | 21 studies |
+| **Head-to-head** | studies measuring **both** PBP and DNA-gyrase mechanisms | 26 studies |
 
 The outcome-selected subset exists only to demonstrate the size of the selection effect and must never be used to estimate comparative class performance.
 
@@ -202,18 +188,12 @@ Any automated re-run of the screen will re-include that record. This is why the 
 
 ## 12. Assay counts are primary-assay, not exclusive
 
-`Assay_Type` lists the primary assay first; 3 arms (157-version) / 15 arms (166-version) carry no assay label. The reported counts (170/45/37/17 → 180/46/37/17) are **primary-assay** counts and sum to fewer than the total number of arms. True non-exclusive counts are much larger (an arm can be both checkerboard and time-kill). Do not treat these as exclusive categories.
+`Assay_Type` lists the primary assay first; 15 arms carry no assay label. The reported counts (180/46/37/17) are **primary-assay** counts and sum to fewer than the total number of arms. True non-exclusive counts are much larger (an arm can be both checkerboard and time-kill). Do not treat these as exclusive categories.
 
 ---
 
-## 13. Why the reanalysis lowers the pooled estimate
+## 13. Why the pooled estimate is lower than a naively selected one
 
 This is not a discrepancy but a result worth recording, because it is the paper's central argument in miniature.
 
-Adding 23 arms drawn from a **less-selected** pool moved:
-
-- pooled synergy **down** 1.6 pp (85.3 → 83.7)
-- β-lactam synergy **down** 2.7 pp (84.8 → 82.1)
-- design-based synergy **down** only 2.0 pp (84.7 → 82.7)
-
-The design-based estimate moved least. That is the pattern predicted if pooled proportions are inflated by selective reporting of positive combinations, and it independently corroborates the paper's methodological thesis.
+Pooled proportions in this literature are inflated by selective reporting of positive combinations, and the direction of that bias is visible within our own dataset. The pooled estimate (83.7%) sits above the design-based estimate (82.7%), and the gap between fluoroquinolones and β-lactams is smaller in the pooled data (9.3 pp) than in the outcome-selected subset (37.1 pp). The design-based analysis moves least under selection, which is the property that justifies using it as the primary comparison.

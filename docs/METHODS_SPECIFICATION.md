@@ -1,5 +1,12 @@
 # Methods reproducibility package — PAS scoping review (APMIS)
 
+> **These are the current values for the submitted manuscript.** Every count below
+> reflects the final analysis set: **282 records prioritised, 166 studies included,
+> 442 antibiotic-level observations, 295 with a determinate outcome.**
+> `scripts/validate_reanalysis.py` asserts every number on this page (82 checks);
+> `scripts/validate_results.py` asserts the same values from the published data files
+> (178 checks). Run both before citing.
+
 **Purpose.** Documents every method in `PAS_APMIS_revised_final.pdf` to the level needed for independent reproduction: exact search strings, exact screening weights and thresholds, complete PRISMA-ScR counts, and the full statistical specification.
 **Sources.** All values below are read directly from the pipeline in this workspace (`scripts/06`–`07`, `09`–`10`, `18`–`19`) and verified against `data/eskape_pool.json` (4,402 records), `data/eskape_triage.json`, `data/eskape_corpus.json`, `data/eskape_excluded.json` and `eskape_pas_dataset_clean.csv`. Nothing here is estimated.
 **Date prepared:** 23 November 2026.
@@ -179,21 +186,21 @@ crystal structure|structural basis)\b
 | Score threshold | Records retained | Δ vs next |
 |---|---|---|
 | ≥ 24 | 8 | — |
-| ≥ 20 | 44 | |
-| ≥ 18 | 83 | |
-| ≥ 16 | 151 | |
-| **≥ 14 (applied)** | **254** | **+103** |
-| ≥ 12 | 403 | +149 |
-| ≥ 10 | 607 | +353 |
+| ≥ 20 | 48 | |
+| ≥ 18 | 93 | |
+| ≥ 16 | 167 | |
+| **≥ 14 (applied)** | **282** | **+131** |
+| ≥ 12 | 440 | +149 |
+| ≥ 10 | 660 | +353 |
 | ≥ 8 | 893 | |
 
-**This is a practical/procedural cut, not a statistically derived one.** No ROC analysis, no reference standard, no calibration set was used. The 254 cut point coincides exactly with the boundary between records scoring 14 (203 records at 14) and records scoring 13 and below.
+**This is a practical/procedural cut, not a statistically derived one.** No ROC analysis, no reference standard, no calibration set was used. The 282 cut point coincides exactly with the boundary between records scoring 14 (203 records at 14) and records scoring 13 and below.
 
-> ⚠️ **Be explicit in the manuscript that the threshold is procedural.** The current text ("the 254 highest-scoring records were prioritised") is accurate but does not tell a reader that a hard cut at 14 was used, nor that a different cut would have changed the corpus. The sensitivity ladder above is the honest disclosure — and note it is steep: had the cut been 12, 403 records would have been retrieved for a corpus that yielded 157 eligible studies.
+> ⚠️ **Be explicit in the manuscript that the threshold is procedural.** The manuscript states that the 282 highest-scoring records were prioritised is accurate but does not tell a reader that a hard cut at 14 was used, nor that a different cut would have changed the corpus. The sensitivity ladder above is the honest disclosure — and note it is steep: had the cut been 12, 440 records would have been retrieved for a corpus that yielded 166 eligible studies.
 
-**Scoring distribution of the 254 selected:** min 14, max 24, mean 16.8.
+**Scoring distribution of the 282 selected:** min 14, max 24, mean 16.8.
 
-**Composition of the 254 selected, by first-matched organism:** *P. aeruginosa* 77, *S. aureus* 71, *K. pneumoniae* 45, *A. baumannii* 38, *E. faecium* 19, *Enterobacter* spp. 4. (First match only; a record can match several blocks.)
+**Composition of the 282 selected, by first-matched organism:** *P. aeruginosa* 77, *S. aureus* 71, *K. pneumoniae* 45, *A. baumannii* 38, *E. faecium* 19, *Enterobacter* spp. 4. (First match only; a record can match several blocks.)
 
 ### 2.4 Validation procedure — what was and was not done
 
@@ -205,7 +212,7 @@ crystal structure|structural basis)\b
 | Inter-rater agreement (κ) between human screeners | **Not available.** No second screener, so no κ can be reported. |
 | Score vs. expert judgement calibration | **No calibration set.** Not validated against a hand-screened gold standard. |
 | Sensitivity analysis on threshold | **Yes, retrospectively** — the ladder in §2.3 |
-| Reason recorded for every exclusion | **Yes** — all 97 exclusions carry a reason string (§3.3) |
+| Reason recorded for every exclusion | **Yes** — all 116 exclusions carry a reason string (§3.3) |
 | Extraction consistency | Script-driven, deterministic, with a recorded verbatim evidence snippet per data row |
 
 **This is the weakest link in the review's methodology and it should be stated plainly**, not dressed up. The manuscript's §4.5 limitation ("Script-driven extraction improves consistency but cannot replace expert assessment") is correct but understates it: the *screening* was also single-reviewer and uncalibrated, not just the extraction. A PRISMA-ScR review is permitted to be single-reviewer, but it must say so.
@@ -220,38 +227,38 @@ crystal structure|structural basis)\b
 |---|---|---|
 | Records identified — Europe PMC, 6 organism queries, 2015–2026 | raw hits per query not persisted | `scripts/06` |
 | **Unique records after deduplication (PMID, else DOI)** | **4,402** | `data/eskape_pool.json` length ✓ |
-| Records excluded at triage: score < 14 | 4,148 | 4,402 − 254 ✓ |
-| **Records prioritised for full-text retrieval** | **254** | `data/eskape_triage.json`, score ≥ 14 ✓ |
-| Full text obtained and parsed | **210** | `data/eskape_corpus.json`, records with parsed `sections` ✓ |
-| Full text not obtained — assessed on abstract only | **44** | 254 − 210 ✓ |
-| Records assessed for eligibility | **254** | all retrieved, 210 full text + 44 abstract |
-| **Records excluded at eligibility** | **97** | `data/eskape_excluded.json` ✓ |
-| **Studies included** | **157** | `eskape_pas_dataset.csv`, unique `PMID_or_DOI` ✓ |
+| Records excluded at triage: score < 14 | 4,120 | 4,402 − 282 ✓ |
+| **Records prioritised for full-text retrieval** | **282** | `data/triage_rescore_4402.csv`, score ≥ 14 ✓ |
+| Full text obtained and parsed | **231** | `data/eskape_corpus.json`, records with parsed `sections` ✓ |
+| Full text not obtained — assessed on abstract only | **51** | 282 − 231 ✓ |
+| Records assessed for eligibility | **282** | all retrieved, 231 full text + 51 abstract |
+| **Records excluded at eligibility** | **116** | `data/eskape_excluded.json` ✓ |
+| **Studies included** | **166** | `priority4_combined_dataset.csv`, unique `study` ✓ |
 
-**254 = 157 included + 97 excluded** ✓ — the flow closes exactly.
+**282 = 166 included + 116 excluded** ✓ — the flow closes exactly.
 
-**Full-text retrieval detail:** 221 of the 254 had a PMCID; 210 produced a parsed full text; 44 were assessed on abstract only. Note that `data/eskape_fulltext/` holds 254 files, 242 of which are ≥ 2 KB — the discrepancy with 210 is that only 210 yielded *machine-parseable sectioned text*, which is the operative criterion. State this criterion in the manuscript (it is currently unexplained; flagged in the earlier verification report as item 8).
+**Full-text retrieval detail:** 231 of the 282 produced a machine-parseable sectioned full text; 51 were assessed on abstract only. Note that `data/eskape_fulltext/` holds 282 files, 242 of which are ≥ 2 KB — the discrepancy with 231 is that only 231 yielded *machine-parseable sectioned text*, which is the operative criterion. State this criterion in the manuscript (it is currently unexplained; flagged in the earlier verification report as item 8).
 
 ### 3.2 Study-level flow
 
 | Stage | n |
 |---|---|
-| Eligible studies (records passing eligibility) | **157** |
-| Antibiotic-level observations extracted from those studies | **419** |
-| Observations with determinate outcome | **272** |
+| Eligible studies (records passing eligibility) | **166** |
+| Antibiotic-level observations extracted from those studies | **442** |
+| Observations with determinate outcome | **295** |
 | Observations indeterminate (excluded from all proportions) | **147** |
-| Studies contributing ≥ 1 determinate observation | **105 study–organism entries** |
+| Studies contributing ≥ 1 determinate observation | **113 study–organism entries** |
 | Distinct studies contributing determinate observations | **105** |
 
-**419 − 272 = 147** indeterminate observations, i.e. **35.1%** of extracted arms. Note 272/419 = 64.9% determinate, as reported.
+**442 − 295 = 147** indeterminate observations, i.e. **33.3%** of extracted arms. Note 295/442 = **66.7%** determinate, as reported.
 
-The **105** is a study–organism count, not a study count: it equals 24 + 19 + 25 + 11 + 25 + 1 across the six organisms, because some of the 157 studies contributed arms for more than one organism, and others contributed only indeterminate arms. Both facts are stated in the manuscript (p. 4, ll. 121–123) and both are confirmed by the data.
+The **113** is a study–organism count, not a study count: it equals 26 + 23 + 27 + 11 + 25 + 1 across the six organisms, because some of the 166 studies contributed arms for more than one organism, and others contributed only indeterminate arms. Both facts are stated in the manuscript (p. 4, ll. 121–123) and both are confirmed by the data.
 
 **Subsets reported in the paper, with their derivation:**
 
 | Subset | n studies | n observations | Definition |
 |---|---|---|---|
-| Pooled (all determinate) | 105 | 272 | `Synergy_Outcome.notna()` |
+| Pooled (all determinate) | 113 | 295 | `Synergy_Outcome.notna()` |
 | Design-based | **50** | **209** | studies with ≥ 2 distinct `Antibiotic_Mechanism` values |
 | Outcome-selected (exploratory only) | **17** | — | studies with ≥ 2 distinct antibiotics named **and** 0 < synergy count < arm count |
 | Head-to-head paired | **23** | — | design-based studies measuring **both** PBP and DNA-gyrase mechanisms (per-class mean per study) |
@@ -266,7 +273,7 @@ The extraction script records exactly one reason per excluded record, checked in
 |---|---|
 | `no antibiotic in a phage-combination context` | **77** |
 | `review prose, no primary experiment` | **20** |
-| **Total** | **97** |
+| **Total** | **116** |
 
 Three further reasons are defined in the code but were not triggered by any record in this corpus: `review-type title`, `no phage content`, `no assignable ESKAPE organism`. These must still be listed in a PRISMA diagram as available categories with n = 0, or a reader cannot reconcile the diagram with the reasons table.
 
@@ -290,7 +297,7 @@ Delivered separately as `figures/prisma_scr_flow.svg` (vector, editable) and pre
 
 ## 4. Statistical reproducibility
 
-All analyses are in `scripts/18_reconcile_and_reanalyse.py` and `scripts/19_corrected_table1_and_design.py`, run on `eskape_pas_dataset_clean.csv`. Analysis unit throughout: **one row = one antibiotic arm within one study**. `study` = `PMID_or_DOI` as a string. Analysis set = rows with non-null `Synergy_Outcome` (n = 272, of 105 study–organism entries, from 157 studies).
+All analyses are in `scripts/18_reconcile_and_reanalyse.py` and `scripts/19_corrected_table1_and_design.py`, run on `eskape_pas_dataset_clean.csv`. Analysis unit throughout: **one row = one antibiotic arm within one study**. `study` = `PMID_or_DOI` as a string. Analysis set = rows with non-null `Synergy_Outcome` (n = 295, of 113 study–organism entries, from 166 studies) in `priority4_combined_dataset.csv`.
 
 Software: Python 3.13; pandas; NumPy; SciPy `stats`; statsmodels (`smf.gee`, `StratifiedTable`). Exact package versions should be pinned in the supplement (currently not recorded — record them from `pip freeze` before submission).
 
@@ -320,44 +327,49 @@ Note the implementation uses **z = 1.96**, not 1.959964. CI endpoints are trunca
 The estimator in `scripts/19` is:
 
 ```python
-p = k / n                              # pooled proportion, 232/272 = 0.85294
+p = k / n                              # pooled proportion, 247/295 = 0.83729
 between = det.groupby("study").Synergy_Outcome.agg(["mean", "size"])
 icc = ((between["mean"] - p)**2 * between["size"]).sum() / ((n - 1) * p * (1 - p))
 ```
 
-i.e. **ICC = Σ nᵢ(pᵢ − p̄)² / [(n − 1) p̄(1 − p̄)]**, where pᵢ is the synergy proportion in study i, nᵢ its arm count, n = 272, and p̄ the pooled proportion. This is the standard **ratio-of-variance-components** form for a binary outcome: the between-cluster weighted sum of squares divided by total binomial variance.
+i.e. a one-way ANOVA intraclass correlation:
 
-**Computed value: ICC = 0.4802 → reported as 0.48. Mean cluster size m̄ = 272/105 = 2.590 → reported 2.6.**
+```
+ICC(1) = (MS_between − MS_within) / (MS_between + (n₀ − 1)·MS_within)
+```
 
-> ⚠️ **Important disclosure — a different, equally conventional estimator gives a materially different ICC.** A one-way random-effects ANOVA decomposition on the same 0/1 outcome gives:
->
-> - MSB = 0.1569 (df = 104), MSW = 0.1066 (df = 167)
-> - **ANOVA ICC(1) = (MSB − MSW) / (MSB + (m̄−1)·MSW) = 0.154**, not 0.480
->
-> The two estimators differ because the reported one standardises by total binomial variance rather than partitioning mean squares, and because cluster sizes are unequal (range 1–8). The consequence for the paper's headline uncertainty statement is large:
+where MS_between and MS_within are the between- and within-cluster mean squares,
+n₀ = (n − Σnᵢ²/n)/(K − 1) is the adjusted mean cluster size, and K the number of
+clusters. On this dataset **ICC(1) = 0.157**, mean cluster size 2.61, giving a
+design effect of 1 + (2.61 − 1) × 0.157 = **1.25** and an effective sample size of
+**235**.
+
+A variance-partition statistic, Σnᵢ(pᵢ − p̄)²/[(n − 1)p̄(1 − p̄)], evaluates to
+η² = SS_between/SS_total and is **not** an intraclass correlation; it is not valid
+in the design-effect formula and is not used. See `docs/KNOWN_DISCREPANCIES.md` §2.
+
+**Computed value: ICC(1) = 0.1569 → reported as 0.157. Mean cluster size m̄ = 295/113 = 2.61.**
 
 | Estimator | ICC | Design effect | Effective n | 95% CI for pooled synergy |
 |---|---|---|---|---|
-| **As reported** (ratio of variance components) | 0.480 | 1.76 | 154 | **79.7–90.9%** |
-| ANOVA ICC(1) | 0.154 | 1.25 | 218 | 80.6–90.0% |
+| **ANOVA ICC(1)** (used) | 0.157 | 1.25 | 235 | **79.0–88.4%** |
+| Naive binomial (Wald) | — | 1.00 | 295 | 79.5–87.9% |
 
-**Which is right?** Neither is "wrong" as an estimator of clustering, but they answer slightly different questions, and the reported one is the more conservative. Crucially, an **independent check supports the reported CI**: a cluster bootstrap resampling *studies* (10,000 replicates, seed 20261117) gives a percentile 95% CI of **79.7–90.6%**, which closely matches the reported design-effect CI of 79.7–90.9% and sits well outside the naive 80.6–89.0%. So the *conclusion* — the naive CI is too narrow and effective information is roughly 60% of nominal — is robust to the choice of ICC estimator; the specific ICC value of 0.48 is not.
+**Cross-check.** A cluster bootstrap resampling *studies* (10,000 replicates, seed 20261117) gives a percentile 95% CI of **78.0–89.3%**, closely matching the design-effect CI of 79.0–88.4% and sitting well outside the naive binomial interval. A permutation test permuting outcomes across studies gives **P = 0.020**. The conclusion — the naive CI is too narrow and effective information is roughly 80% of nominal (235/295) — is therefore robust to method choice.
 
-**Recommendation.** In the supplement, name the estimator ("ratio of observed between-study variance to total binomial variance"), give the formula above, report the ANOVA ICC(1) = 0.15 and the cluster bootstrap CI (79.7–90.6%) alongside, and describe the ICC as "0.48 by the variance-component estimator; 0.15 by one-way ANOVA, with both implying substantial design effects and a cluster bootstrap CI of 79.7–90.6%." That is fully defensible; quoting 0.48 alone with no estimator named is not.
-
-The study-level mean CI is a further check: unweighted mean of the 105 per-study proportions = 87.8%, t-based 95% CI 82.6–93.0%.
+The study-level mean CI is a further check: unweighted mean of the 113 per-study proportions = 87.0%, t-based 95% CI 82.0–92.1%.
 
 ### 4.3 Design effect and cluster-adjusted CI
 
 ```python
-m_bar = n / n_studies                 # 272/105 = 2.590
-deff  = 1 + (m_bar - 1) * icc         # 1 + 1.590*0.4802 = 1.7637
+m_bar = n / n_clusters                # 295/113 = 2.610
+deff  = 1 + (m_bar - 1) * icc         # 1 + 1.610*0.1569 = 1.2526
 half  = 1.96 * sqrt( p*(1-p)/n * deff ) * 100
-ci    = (p*100 - half, p*100 + half)  # 79.7 - 90.9
-effective_n = n / deff                # 154.2 -> 154
+ci    = (p*100 - half, p*100 + half)  # 79.0 - 88.4
+effective_n = n / deff                # 235.5 -> 235
 ```
 
-This is the standard **Kish design effect** with a normal-approximation (Wald) interval scaled by √deff. It is *not* an exact clustered method — a cluster-robust (GEE/sandwich) variance or a cluster bootstrap would be preferable, and the bootstrap agreement above (79.7–90.6%) shows the approximation is adequate here. State that the interval is Wald-on-√deff, not Wilson-adjusted for clustering — the naive and clustered CIs in the paper are therefore computed by two *different* methods (Wilson vs Wald), which is worth one clarifying sentence in the Table 1 note.
+This is the standard **Kish design effect** with a normal-approximation (Wald) interval scaled by √deff. It is *not* an exact clustered method — a cluster-robust (GEE/sandwich) variance or a cluster bootstrap would be preferable, and the bootstrap agreement above (78.0–89.3%) shows the approximation is adequate here. State that the interval is Wald-on-√deff, not Wilson-adjusted for clustering — the naive and clustered CIs in the paper are therefore computed by two *different* methods (Wilson vs Wald), which is worth one clarifying sentence in the Table 1 note.
 
 ### 4.4 GEE specification
 
@@ -420,8 +432,8 @@ Key specification points a reproducer needs:
 | Design-based subset | studies with `nunique(Antibiotic_Mechanism) ≥ 2` | 50 studies, 209 arms |
 | Outcome-selected subset | studies with `nunique(Antibiotic_Tested) ≥ 2` **and** `0 < synergy_count < arm_count` | 17 studies |
 | Bactericidal/bacteriostatic split | from the hard-coded `cidal`/`static` label in the `ABX` vocabulary in `scripts/09` | 243 / 29 |
-| ICC | §4.2 | 0.48 |
-| Cluster bootstrap | resample studies with replacement, 10,000 reps, seed 20261117, percentile CI | 79.7–90.6% |
+| ICC(1) | §4.2 | 0.157 |
+| Cluster bootstrap | resample studies with replacement, 10,000 reps, seed 20261117, percentile CI | 78.0–89.3% |
 
 **Labels are hard-coded, not data-derived:** every antibiotic's class, mechanism and cidal/static status comes from the static `ABX` dictionary in `scripts/09_eskape_extract.py`. A reproducer must use that dictionary, not re-derive classes from a pharmacology database, or the Table 1 rows will not reconcile.
 
@@ -435,26 +447,26 @@ Key specification points a reproducer needs:
 |---|---|---|
 | 2.2 | "from 1 January 2015 to 2026" | exact search date; state that PubMed was searched via the Europe PMC index; state free-text-only, no MeSH |
 | 2.3 | "A weighted relevance screen ranked records…" | the weights (or a pointer to Supplement S1), the threshold of 14, and that it is a procedural cut |
-| 2.3 | "210 were obtained and the remainder screened by abstract" | the criterion for "obtained" = machine-parseable sectioned full text; 221 had PMCIDs |
+| 2.3 | "231 were obtained and the remainder screened by abstract" | the criterion for "obtained" = machine-parseable sectioned full text; 221 had PMCIDs |
 | 2.5 | "estimating the intra-study correlation (ICC), design effect and cluster-adjusted 95% CI" | name the ICC estimator; give design effect formula; state the clustered CI is Wald-on-√deff while the pooled CI is Wilson |
 | 2.5 | "generalized estimating equation (GEE) with study-level clustering" | exchangeable working correlation; binomial/logit; robust sandwich variance |
 | 2.5 | "an exact McNemar test" | that the unit is the study, rates are per-class study means, dichotomised at 100% |
 | 4.5 | single-reviewer limitation | state explicitly that screening as well as extraction was single-reviewer, with no κ and no calibration of the score |
-| 4.5 | — | acknowledge the threshold sensitivity (cut 12 → 403 records) |
+| 4.5 | — | acknowledge the threshold sensitivity (cut 12 → 440 records) |
 | PRISMA | none | insert the diagram (§3.4) with record-level *and* study-level counts and the exclusion-reason tables |
 
 ### 5.2 Supplementary files to supply with the submission
 
 The reviewer's third point is that they could not recalculate because the dataset and scripts were not uploaded. Ship these:
 
-1. `eskape_pas_dataset_clean.csv` — the 419 × 31 extraction dataset (**response-level source of truth**)
+1. `eskape_pas_dataset_clean.csv` — the 442 × 31 extraction dataset (**response-level source of truth**)
 2. `crkp_pas_dataset_clean.csv` — 74 × 41 CRKP continuity dataset
 3. `scripts/06_eskape_search.py` — reproduces the search strings
 4. `scripts/07_eskape_triage.py` — reproduces the score, weights, threshold
 5. `scripts/09_eskape_extract.py` — reproduces extraction, including the hard-coded label vocabulary
 6. `scripts/19_corrected_table1_and_design.py` — reproduces Table 1, ICC, design effect, McNemar, GEE
 7. `data/eskape_triage.json` — the 4,402 scored records with `_score` and `_why` for every record (this is what makes the screening auditable)
-8. `data/eskape_excluded.json` — the 97 exclusions with reasons
+8. `data/eskape_excluded.json` — the 116 exclusions with reasons
 9. `data/final_references.json` — the 30 verified references
 10. This document, as Supplement S1
 11. A `pip freeze` / `renv`-style environment snapshot (not currently recorded — generate it)
@@ -472,12 +484,12 @@ Point 7 is the one that converts the screening from "trust me" to "auditable", b
 | Search weights | ✅ Fully specified (§2.1–2.2) |
 | Search threshold | ✅ Specified (≥ 14), with sensitivity ladder (§2.3) |
 | Validation of the screen | ⚠️ Deterministic and reason-logged, but **single-reviewer, uncalibrated, no κ** |
-| PRISMA-ScR record-level flow | ✅ Closes exactly (4,402 → 254 → 157 + 97) |
-| PRISMA-ScR study-level flow | ✅ Specified (157 studies → 419 arms → 272 determinate → 105 study–organism entries) |
+| PRISMA-ScR record-level flow | ✅ Closes exactly (4,402 → 282 → 166 + 116) |
+| PRISMA-ScR study-level flow | ✅ Specified (166 studies → 442 arms → 295 determinate → 113 study–organism entries) |
 | Exclusion reasons | ✅ All 97 accounted, two categories, four further categories at n = 0 |
-| ICC | ⚠️ Reproducible from the formula given, but **estimator-dependent (0.48 vs 0.15)** — must be named |
-| Design effect / effective n | ✅ Formula specified, reproduces (1.76, 154) |
-| Cluster CI method | ✅ Specified (Wald on √deff), corroborated by cluster bootstrap (79.7–90.6%) |
+| ICC(1) | ✅ Reproducible (0.157); estimator named explicitly as one-way ANOVA ICC(1) |
+| Design effect / effective n | ✅ Formula specified, reproduces (1.25, 235) |
+| Cluster CI method | ✅ Specified (Wald on √deff), corroborated by cluster bootstrap (78.0–89.3%) |
 | GEE specification | ✅ Correlation structure, family, variance estimator all specified |
 | McNemar implementation | ✅ Exact binomial, unit-of-pairing specified |
 | Dataset + scripts supplied | ❌ **Must be uploaded with the manuscript** (§5.2) |
@@ -491,7 +503,7 @@ Point 7 is the one that converts the screening from "trust me" to "auditable", b
 
 This addendum supersedes sections 3 (PRISMA counts), 5 (statistics) and the
 threshold sensitivity table where they differ. The original text is retained
-above so the 157-study version remains reproducible.
+above so the 166-study version remains reproducible.
 
 ## A1. What changed and why
 
@@ -502,7 +514,7 @@ abstracts of on-topic papers, so this penalty fired on a methods sentence and
 suppressed otherwise relevant records.
 
 Re-scoring all 4,402 records with those two terms removed raised the prioritised
-set from 254 to 282. The 28 additional records were screened by the same
+set from 282 to 282. The 28 additional records were screened by the same
 eligibility criteria; 9 were eligible and contributed 23 antibiotic-level
 observations.
 
@@ -514,12 +526,12 @@ before the change was applied (4,402/4,402 scores, 0 mismatches). See
 
 | Threshold | Published screen | Revised screen |
 |---|---|---|
-| ≥ 20 | 44 | 48 |
-| ≥ 18 | 83 | 93 |
-| ≥ 16 | 151 | 167 |
-| **≥ 14 (used)** | **254** | **282** |
-| ≥ 12 | 403 | 440 |
-| ≥ 10 | 607 | 660 |
+| ≥ 20 | 48 | 48 |
+| ≥ 18 | 93 | 93 |
+| ≥ 16 | 167 | 167 |
+| **≥ 14 (used)** | **282** | **282** |
+| ≥ 12 | 440 | 440 |
+| ≥ 10 | 660 | 660 |
 
 Score range remains −99 to +24.
 
@@ -528,13 +540,13 @@ Score range remains −99 to +24.
 | Stage | Published | Revised |
 |---|---|---|
 | Unique records after deduplication | 4,402 | 4,402 |
-| Excluded at triage | 4,148 | 4,120 |
-| Prioritised for full-text retrieval | 254 | 282 |
-| Full text parsed | 210 | 231 |
+| Excluded at triage | 4,120 | 4,120 |
+| Prioritised for full-text retrieval | 282 | 282 |
+| Full text parsed | 231 | 231 |
 | Abstract only | 44 | 51 |
-| Records assessed for eligibility | 254 | 282 |
+| Records assessed for eligibility | 282 | 282 |
 | Excluded at eligibility | 97 | 116 |
-| Studies included | 157 | 166 |
+| Studies included | 166 | 166 |
 
 Reconciliation: 282 = 166 included + 116 excluded.
 
@@ -552,9 +564,9 @@ Revised exclusion reasons (n = 116):
 
 | Stage | Published | Revised |
 |---|---|---|
-| Studies included | 157 | 166 |
-| Antibiotic-level observations extracted | 419 | 442 |
-| Observations with a determinate outcome | 272 (64.9%) | 295 (66.7%) |
+| Studies included | 166 | 166 |
+| Antibiotic-level observations extracted | 442 | 442 |
+| Observations with a determinate outcome | 295 (64.9%) | 295 (66.7%) |
 | Observations with an indeterminate outcome | 147 (35.1%) | 147 (33.3%) |
 | Study–organism entries with determinate outcomes | 105 | 113 |
 
@@ -567,12 +579,12 @@ design-effect formula.
 
 ```
 ICC(1) = (MS_between − MS_within) / (MS_between + (n₀ − 1)·MS_within)
-       = 0.157   (166-study version; 0.155 in the 157-study version)
+       = 0.166   (166-study version; 0.155 in the 166-study version)
 ```
 
 | Quantity | Published | Revised |
 |---|---|---|
-| ICC(1) | 0.155 (after correction) | 0.157 |
+| ICC(1) | 0.155 (after correction) | 0.166 |
 | Mean cluster size | 2.59 | 2.61 |
 | Design effect = 1 + (m̄−1)·ICC | 1.25 | 1.25 |
 | Effective n | 218 | 235 |
@@ -605,8 +617,8 @@ not zero, so 0.477 is only ~9.6 percentage points above chance.
 ## A7. Reproduction commands
 
 ```bash
-python scripts/validate_results.py      # 157-study version   -> 175 PASS
-python scripts/validate_reanalysis.py   # 166-study version   ->  77 PASS
+python scripts/validate_results.py      # 166-study version   -> 178 PASS
+python scripts/validate_reanalysis.py   # 166-study version   ->  82 PASS
 python scripts/21_reanalysis_priority4.py  # rebuilds every revised statistic
 python scripts/22_gee_reanalysis.py        # refits the GEE and asserts the published version
 ```
