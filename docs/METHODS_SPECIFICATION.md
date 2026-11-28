@@ -484,3 +484,138 @@ Point 7 is the one that converts the screening from "trust me" to "auditable", b
 | Software versions pinned | ❌ Not recorded — generate before submission |
 
 **Three things genuinely require your input or action:** the real search date, the single-reviewer/κ disclosure, and uploading the dataset and scripts. Everything else is now documented to a level a reviewer can reproduce.
+
+---
+
+# ADDENDUM — Reanalysis after the sensitivity screen (27 November 2026)
+
+This addendum supersedes sections 3 (PRISMA counts), 5 (statistics) and the
+threshold sensitivity table where they differ. The original text is retained
+above so the 157-study version remains reproducible.
+
+## A1. What changed and why
+
+The weighted relevance score applied penalties for "off-target" topics. The
+off-target term list included `wastewater` and `sewage`. Phage provenance
+sentences ("phage X was isolated from hospital wastewater") are routine in the
+abstracts of on-topic papers, so this penalty fired on a methods sentence and
+suppressed otherwise relevant records.
+
+Re-scoring all 4,402 records with those two terms removed raised the prioritised
+set from 254 to 282. The 28 additional records were screened by the same
+eligibility criteria; 9 were eligible and contributed 23 antibiotic-level
+observations.
+
+The reimplementation was verified to reproduce the published scoring exactly
+before the change was applied (4,402/4,402 scores, 0 mismatches). See
+`scripts/07b_triage_sensitivity.py`, which asserts this at run time.
+
+## A2. Revised threshold ladder
+
+| Threshold | Published screen | Revised screen |
+|---|---|---|
+| ≥ 20 | 44 | 48 |
+| ≥ 18 | 83 | 93 |
+| ≥ 16 | 151 | 167 |
+| **≥ 14 (used)** | **254** | **282** |
+| ≥ 12 | 403 | 440 |
+| ≥ 10 | 607 | 660 |
+
+Score range remains −99 to +24.
+
+## A3. Revised PRISMA-ScR flow
+
+| Stage | Published | Revised |
+|---|---|---|
+| Unique records after deduplication | 4,402 | 4,402 |
+| Excluded at triage | 4,148 | 4,120 |
+| Prioritised for full-text retrieval | 254 | 282 |
+| Full text parsed | 210 | 231 |
+| Abstract only | 44 | 51 |
+| Records assessed for eligibility | 254 | 282 |
+| Excluded at eligibility | 97 | 116 |
+| Studies included | 157 | 166 |
+
+Reconciliation: 282 = 166 included + 116 excluded.
+
+Revised exclusion reasons (n = 116):
+- No antibiotic tested in a phage-combination context: 77 + 10 = 87
+- Review article or review text; no primary experiment: 20
+- Co-agent not an antibiotic (thyme oil ×2 duplicate preprints, allicin): 3
+- Phage and antibiotic given as separate monotherapy arms: 2
+- Combination run but no interaction outcome reported: 1
+- Organism not an ESKAPE species: 1
+- Synergy claimed but not established: 1
+- Outcome not verifiable in available text: 1
+
+## A4. Revised study-level flow
+
+| Stage | Published | Revised |
+|---|---|---|
+| Studies included | 157 | 166 |
+| Antibiotic-level observations extracted | 419 | 442 |
+| Observations with a determinate outcome | 272 (64.9%) | 295 (66.7%) |
+| Observations with an indeterminate outcome | 147 (35.1%) | 147 (33.3%) |
+| Study–organism entries with determinate outcomes | 105 | 113 |
+
+## A5. Statistical methods — corrected estimator
+
+**The ICC is now a one-way ANOVA ICC(1).** An earlier version used
+`Σnᵢ(pᵢ−p̄)²/[(n−1)p̄(1−p̄)]`, which algebraically equals `SS_between/SS_total`,
+i.e. η². η² is not an intraclass correlation and is not valid in the
+design-effect formula.
+
+```
+ICC(1) = (MS_between − MS_within) / (MS_between + (n₀ − 1)·MS_within)
+       = 0.157   (166-study version; 0.155 in the 157-study version)
+```
+
+| Quantity | Published | Revised |
+|---|---|---|
+| ICC(1) | 0.155 (after correction) | 0.157 |
+| Mean cluster size | 2.59 | 2.61 |
+| Design effect = 1 + (m̄−1)·ICC | 1.25 | 1.25 |
+| Effective n | 218 | 235 |
+| Cluster-adjusted 95% CI | 80.6–90.0% | 79.0–88.4% |
+| Cluster bootstrap (10,000 replicates) | 79.8–90.6% | 78.0–89.3% |
+| Permutation P (clustering vs chance) | 0.032 | 0.020 |
+| Cluster size range | 1–10 | 1–10 |
+| Singleton clusters | 50 / 105 | 52 / 113 |
+
+The permutation test shuffles outcomes across studies while holding cluster
+sizes fixed and recomputes η²; the null expectation of η² is (G−1)/(n−1) = 0.381,
+not zero, so 0.477 is only ~9.6 percentage points above chance.
+
+## A6. Revised comparative estimates
+
+| Comparison | Published | Revised |
+|---|---|---|
+| Fluoroquinolone vs β-lactam, pooled | 8.2 pp | 9.3 pp |
+| — study-level mean (design-based) | 10.8 pp | 12.0 pp |
+| — arm-based (design-based) | 12.4 pp | 13.1 pp |
+| — outcome-selected (exploratory) | 40.7 pp | 37.1 pp |
+| Design-based subset | 50 studies / 209 arms / 84.7% | 55 / 226 / 82.7% |
+| Outcome-selected subset | 17 studies | 21 studies |
+| Head-to-head paired studies | 23 | 26 |
+| Paired mean FQ / BL | 91.3% / 75.4% | 88.5% / 71.8% |
+| McNemar b / c / exact P | 5 / 1 / 0.22 | 6 / 1 / 0.13 |
+| GEE odds ratio (design-based subset) | 4.6 (0.45–47.3), P = 0.20 | **3.97 (0.59–26.59), P = 0.156** |
+| GEE fitting sample | 50 studies / 105 arms | 55 studies / 117 arms |
+
+## A7. Reproduction commands
+
+```bash
+python scripts/validate_results.py      # 157-study version   -> 175 PASS
+python scripts/validate_reanalysis.py   # 166-study version   ->  77 PASS
+python scripts/21_reanalysis_priority4.py  # rebuilds every revised statistic
+python scripts/22_gee_reanalysis.py        # refits the GEE and asserts the published version
+```
+
+`21_reanalysis_priority4.py` reads `data/priority4_combined_dataset.csv` and
+writes `data/reanalysis_results.json`. It requires no network access.
+
+`07b_triage_sensitivity.py` requires `data/eskape_pool.json`, which is a
+screening-stage artefact not distributed here (it embeds record abstracts).
+Re-generate it with `scripts/06_eskape_search.py`; the committed
+`data/triage_rescore_4402.csv` contains the resulting scores and
+rationales without the abstracts.
