@@ -13,7 +13,8 @@ from pathlib import Path
 import requests
 # (PubMed via Europe PMC; Biopython not required for this sweep)
 
-DATA = Path("/home/user/data")
+ROOT = Path(__file__).resolve().parent.parent
+DATA = ROOT / "data"
 EPMC = "https://www.ebi.ac.uk/europepmc/webservices/rest"
 
 # ESKAPE organism blocks

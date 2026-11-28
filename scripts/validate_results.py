@@ -151,34 +151,42 @@ check("All classes: delta pp", round(dsub.Synergy_Outcome.mean() * 100
                                     - det.Synergy_Outcome.mean() * 100, 1), -0.6)
 
 # --------------------------------------------------------------------------
-header("6. Clustering: ICC, design effect, effective n, cluster CI  (Results 3.2)")
+header("6. Clustering: ICC(1), design effect, effective n, cluster CI  (Results 3.2)")
 k, n = det.Synergy_Outcome.sum(), len(det)
 p = k / n
 between = det.groupby("study").Synergy_Outcome.agg(["mean", "size"])
-icc = ((between["mean"] - p) ** 2 * between["size"]).sum() / ((n - 1) * p * (1 - p))
 m_bar = n / det.study.nunique()
-deff = 1 + (m_bar - 1) * icc
-half = 1.96 * np.sqrt(p * (1 - p) / n * deff) * 100
 naive_lo, naive_hi = wilson(int(k), n)
-check("ICC (variance-component)", round(icc, 2), 0.48)
-check("mean cluster size", round(m_bar, 1), 2.6)
-check("design effect", round(deff, 2), 1.76)
-check("effective n", round(n / deff), 154)
-check("naive Wilson CI lower", round(naive_lo, 1), 80.6)
-check("naive Wilson CI upper", round(naive_hi, 1), 89.0)
-check("cluster-adjusted CI lower", round(p * 100 - half, 1), 79.7)
-check("cluster-adjusted CI upper", round(p * 100 + half, 1), 90.9)
 
-print("\n  -- ICC sensitivity (reported in docs/KNOWN_DISCREPANCIES.md) --")
+# --- one-way ANOVA ICC(1): the estimator now used in the manuscript --------
 ssb = (between["size"] * (between["mean"] - p) ** 2).sum()
 ssw = ((det.Synergy_Outcome - det.study.map(between["mean"])) ** 2).sum()
 K = len(between)
 msb, msw = ssb / (K - 1), ssw / (n - K)
-icc_anova = (msb - msw) / (msb + (m_bar - 1) * msw)
-print(f"  [INFO] one-way ANOVA ICC(1)                = {icc_anova:.3f}  "
-      f"(paper reports {icc:.2f} from the variance-component estimator)")
-print(f"  [INFO] interpretation: both imply substantial clustering; the "
-      f"variance-component estimator is the more conservative")
+n0 = (n - (between["size"] ** 2).sum() / n) / (K - 1)
+icc = (msb - msw) / (msb + (n0 - 1) * msw)
+deff = 1 + (m_bar - 1) * icc
+half = 1.96 * np.sqrt(p * (1 - p) / n * deff) * 100
+
+check("ICC(1) one-way ANOVA", round(icc, 2), 0.16)
+check("mean cluster size", round(m_bar, 2), 2.59)
+check("design effect", round(deff, 2), 1.25)
+check("effective n", round(n / deff), 218)
+check("naive Wilson CI lower", round(naive_lo, 1), 80.6)
+check("naive Wilson CI upper", round(naive_hi, 1), 89.0)
+check("cluster-adjusted CI lower", round(p * 100 - half, 1), 80.6)
+check("cluster-adjusted CI upper", round(p * 100 + half, 1), 90.0)
+
+print("\n  -- eta-squared is NOT an ICC and is no longer used in the design effect --")
+eta2 = ssb / ((det.Synergy_Outcome - p) ** 2).sum()
+print(f"  [INFO] eta^2 (variance explained by study)  = {eta2:.3f}  "
+      f"- descriptive only; would give deff {1 + (m_bar - 1) * eta2:.2f} (not used)")
+null_eta2 = (K - 1) / (n - 1)
+print(f"  [INFO] expected eta^2 with no clustering    = {null_eta2:.3f}  "
+      f"(so {eta2:.3f} is only {(eta2 - null_eta2) * 100:.1f} pp above chance)")
+check("cluster sizes min", int(between["size"].min()), 1)
+check("cluster sizes max", int(between["size"].max()), 10)
+check_eq("singleton clusters", int((between["size"] == 1).sum()), 50)
 
 # --------------------------------------------------------------------------
 header("7. Multifactorial and discordance counts  (Results 3.2)")

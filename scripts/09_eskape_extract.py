@@ -18,8 +18,9 @@ import re
 from collections import Counter
 from pathlib import Path
 
-DATA = Path("/home/user/data")
-OUT = Path("/home/user")
+ROOT = Path(__file__).resolve().parent.parent
+DATA = ROOT / "data"
+OUT = ROOT
 corpus = json.loads((DATA / "eskape_corpus.json").read_text())
 
 # ------------------------------- vocabularies -------------------------------

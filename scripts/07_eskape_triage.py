@@ -9,7 +9,8 @@ import re
 from collections import Counter
 from pathlib import Path
 
-DATA = Path("/home/user/data")
+ROOT = Path(__file__).resolve().parent.parent
+DATA = ROOT / "data"
 pool = json.loads((DATA / "eskape_pool.json").read_text())
 
 ORG_PAT = {

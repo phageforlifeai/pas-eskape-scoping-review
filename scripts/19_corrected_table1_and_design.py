@@ -29,7 +29,7 @@ from statsmodels.stats.contingency_tables import StratifiedTable
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
 
-ROOT = Path("/home/user")
+ROOT = Path(__file__).resolve().parent.parent
 OUTD = ROOT / "data"
 
 d = pd.read_csv(ROOT / "eskape_pas_dataset_clean.csv")
