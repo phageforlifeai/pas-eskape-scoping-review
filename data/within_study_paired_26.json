@@ -1,0 +1,11 @@
+{
+ "n_studies": 26,
+ "b": 6,
+ "c": 1,
+ "both100": 17,
+ "neither100": 2,
+ "mcnemar_exact_p": 0.125,
+ "mean_fq": 88.5,
+ "mean_bl": 71.8,
+ "diff_pp": 16.7
+}

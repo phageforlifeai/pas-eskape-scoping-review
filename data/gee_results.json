@@ -1,0 +1,28 @@
+{
+ "published": {
+  "label": "published (157-study)",
+  "design_based_studies": 50,
+  "gee_arms": 105,
+  "OR": 4.62,
+  "ci": [
+   0.45,
+   47.26
+  ],
+  "p": 0.197,
+  "fq_arms": 34,
+  "bl_arms": 71
+ },
+ "reanalysed": {
+  "label": "reanalysed (166-study)",
+  "design_based_studies": 55,
+  "gee_arms": 117,
+  "OR": 3.97,
+  "ci": [
+   0.59,
+   26.59
+  ],
+  "p": 0.156,
+  "fq_arms": 37,
+  "bl_arms": 80
+ }
+}

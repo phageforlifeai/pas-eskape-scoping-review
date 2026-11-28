@@ -1,0 +1,1392 @@
+{
+ "n_published": 272,
+ "n_new": 23,
+ "n_combined": 295,
+ "studies_published": 105,
+ "studies_new": 8,
+ "studies_combined": 113,
+ "pooled_before": {
+  "label": "published",
+  "n_determinate": 272,
+  "n_studies": 105,
+  "synergy_n": 232,
+  "synergy_pct": 85.29,
+  "synergy_ci": [
+   80.6,
+   89.0
+  ],
+  "antagonism_n": 15,
+  "antagonism_pct": 5.51,
+  "antagonism_ci": [
+   3.4,
+   8.9
+  ],
+  "icc1": 0.155,
+  "mean_cluster": 2.59,
+  "deff": 1.25,
+  "eff_n": 218,
+  "cluster_ci": [
+   80.6,
+   90.0
+  ],
+  "bootstrap_ci": [
+   79.8,
+   90.6
+  ],
+  "eta2": 0.4784,
+  "eta2_null_mean": 0.3836,
+  "perm_p": 0.0328,
+  "size_range": [
+   1,
+   10
+  ],
+  "singletons": 50
+ },
+ "pooled_after": {
+  "label": "combined",
+  "n_determinate": 295,
+  "n_studies": 113,
+  "synergy_n": 247,
+  "synergy_pct": 83.73,
+  "synergy_ci": [
+   79.1,
+   87.5
+  ],
+  "antagonism_n": 16,
+  "antagonism_pct": 5.42,
+  "antagonism_ci": [
+   3.4,
+   8.6
+  ],
+  "icc1": 0.157,
+  "mean_cluster": 2.61,
+  "deff": 1.25,
+  "eff_n": 235,
+  "cluster_ci": [
+   79.0,
+   88.4
+  ],
+  "bootstrap_ci": [
+   78.0,
+   89.3
+  ],
+  "eta2": 0.4772,
+  "eta2_null_mean": 0.3807,
+  "perm_p": 0.0198,
+  "size_range": [
+   1,
+   10
+  ],
+  "singletons": 52
+ },
+ "by_class_after": [
+  {
+   "category": "Macrolide",
+   "synergy_n": 1,
+   "total_n": 1,
+   "synergy_pct": 100.0,
+   "ci": [
+    20.7,
+    100.0
+   ],
+   "antagonism_n": 0
+  },
+  {
+   "category": "Lincosamide",
+   "synergy_n": 2,
+   "total_n": 2,
+   "synergy_pct": 100.0,
+   "ci": [
+    34.2,
+    100.0
+   ],
+   "antagonism_n": 0
+  },
+  {
+   "category": "Siderophore cephalosporin",
+   "synergy_n": 1,
+   "total_n": 1,
+   "synergy_pct": 100.0,
+   "ci": [
+    20.7,
+    100.0
+   ],
+   "antagonism_n": 0
+  },
+  {
+   "category": "cefotaxime",
+   "synergy_n": 1,
+   "total_n": 1,
+   "synergy_pct": 100.0,
+   "ci": [
+    20.7,
+    100.0
+   ],
+   "antagonism_n": 0
+  },
+  {
+   "category": "cefiderocol",
+   "synergy_n": 1,
+   "total_n": 1,
+   "synergy_pct": 100.0,
+   "ci": [
+    20.7,
+    100.0
+   ],
+   "antagonism_n": 0
+  },
+  {
+   "category": "kanamycin",
+   "synergy_n": 1,
+   "total_n": 1,
+   "synergy_pct": 100.0,
+   "ci": [
+    20.7,
+    100.0
+   ],
+   "antagonism_n": 0
+  },
+  {
+   "category": "levofloxacin",
+   "synergy_n": 1,
+   "total_n": 1,
+   "synergy_pct": 100.0,
+   "ci": [
+    20.7,
+    100.0
+   ],
+   "antagonism_n": 0
+  },
+  {
+   "category": "amikacin",
+   "synergy_n": 1,
+   "total_n": 1,
+   "synergy_pct": 100.0,
+   "ci": [
+    20.7,
+    100.0
+   ],
+   "antagonism_n": 0
+  },
+  {
+   "category": "ampicillin-sulbactam",
+   "synergy_n": 1,
+   "total_n": 1,
+   "synergy_pct": 100.0,
+   "ci": [
+    20.7,
+    100.0
+   ],
+   "antagonism_n": 0
+  },
+  {
+   "category": "Cephalosporin",
+   "synergy_n": 27,
+   "total_n": 29,
+   "synergy_pct": 93.1,
+   "ci": [
+    78.0,
+    98.1
+   ],
+   "antagonism_n": 2
+  },
+  {
+   "category": "Fluoroquinolone",
+   "synergy_n": 40,
+   "total_n": 43,
+   "synergy_pct": 93.02,
+   "ci": [
+    81.4,
+    97.6
+   ],
+   "antagonism_n": 1
+  },
+  {
+   "category": "Tetracycline",
+   "synergy_n": 13,
+   "total_n": 14,
+   "synergy_pct": 92.86,
+   "ci": [
+    68.5,
+    98.7
+   ],
+   "antagonism_n": 1
+  },
+  {
+   "category": "Lipopeptide",
+   "synergy_n": 10,
+   "total_n": 11,
+   "synergy_pct": 90.91,
+   "ci": [
+    62.3,
+    98.4
+   ],
+   "antagonism_n": 0
+  },
+  {
+   "category": "Rifamycin",
+   "synergy_n": 7,
+   "total_n": 8,
+   "synergy_pct": 87.5,
+   "ci": [
+    52.9,
+    97.8
+   ],
+   "antagonism_n": 1
+  },
+  {
+   "category": "Polymyxin",
+   "synergy_n": 26,
+   "total_n": 30,
+   "synergy_pct": 86.67,
+   "ci": [
+    70.3,
+    94.7
+   ],
+   "antagonism_n": 1
+  },
+  {
+   "category": "Carbapenem",
+   "synergy_n": 38,
+   "total_n": 44,
+   "synergy_pct": 86.36,
+   "ci": [
+    73.3,
+    93.6
+   ],
+   "antagonism_n": 2
+  },
+  {
+   "category": "Oxazolidinone",
+   "synergy_n": 5,
+   "total_n": 6,
+   "synergy_pct": 83.33,
+   "ci": [
+    43.6,
+    97.0
+   ],
+   "antagonism_n": 1
+  },
+  {
+   "category": "meropenem",
+   "synergy_n": 4,
+   "total_n": 5,
+   "synergy_pct": 80.0,
+   "ci": [
+    37.6,
+    96.4
+   ],
+   "antagonism_n": 0
+  },
+  {
+   "category": "Aminoglycoside",
+   "synergy_n": 27,
+   "total_n": 34,
+   "synergy_pct": 79.41,
+   "ci": [
+    63.2,
+    89.7
+   ],
+   "antagonism_n": 3
+  },
+  {
+   "category": "Penicillin",
+   "synergy_n": 13,
+   "total_n": 17,
+   "synergy_pct": 76.47,
+   "ci": [
+    52.7,
+    90.4
+   ],
+   "antagonism_n": 0
+  },
+  {
+   "category": "Fosfomycin",
+   "synergy_n": 3,
+   "total_n": 4,
+   "synergy_pct": 75.0,
+   "ci": [
+    30.1,
+    95.4
+   ],
+   "antagonism_n": 0
+  },
+  {
+   "category": "Glycopeptide",
+   "synergy_n": 10,
+   "total_n": 14,
+   "synergy_pct": 71.43,
+   "ci": [
+    45.4,
+    88.3
+   ],
+   "antagonism_n": 1
+  },
+  {
+   "category": "Cephalosporin/BLI",
+   "synergy_n": 4,
+   "total_n": 6,
+   "synergy_pct": 66.67,
+   "ci": [
+    30.0,
+    90.3
+   ],
+   "antagonism_n": 1
+  },
+  {
+   "category": "Amphenicol",
+   "synergy_n": 4,
+   "total_n": 6,
+   "synergy_pct": 66.67,
+   "ci": [
+    30.0,
+    90.3
+   ],
+   "antagonism_n": 1
+  },
+  {
+   "category": "ciprofloxacin",
+   "synergy_n": 2,
+   "total_n": 3,
+   "synergy_pct": 66.67,
+   "ci": [
+    20.8,
+    93.9
+   ],
+   "antagonism_n": 0
+  },
+  {
+   "category": "colistin",
+   "synergy_n": 2,
+   "total_n": 3,
+   "synergy_pct": 66.67,
+   "ci": [
+    20.8,
+    93.9
+   ],
+   "antagonism_n": 0
+  },
+  {
+   "category": "Penicillin/BLI",
+   "synergy_n": 1,
+   "total_n": 2,
+   "synergy_pct": 50.0,
+   "ci": [
+    9.5,
+    90.5
+   ],
+   "antagonism_n": 0
+  },
+  {
+   "category": "ceftazidime",
+   "synergy_n": 1,
+   "total_n": 3,
+   "synergy_pct": 33.33,
+   "ci": [
+    6.1,
+    79.2
+   ],
+   "antagonism_n": 1
+  },
+  {
+   "category": "ampicillin",
+   "synergy_n": 0,
+   "total_n": 1,
+   "synergy_pct": 0.0,
+   "ci": [
+    0.0,
+    79.3
+   ],
+   "antagonism_n": 0
+  },
+  {
+   "category": "gentamicin",
+   "synergy_n": 0,
+   "total_n": 1,
+   "synergy_pct": 0.0,
+   "ci": [
+    0.0,
+    79.3
+   ],
+   "antagonism_n": 0
+  },
+  {
+   "category": "imipenem",
+   "synergy_n": 0,
+   "total_n": 1,
+   "synergy_pct": 0.0,
+   "ci": [
+    0.0,
+    79.3
+   ],
+   "antagonism_n": 0
+  }
+ ],
+ "by_mechanism_after": [
+  {
+   "category": "DNA gyrase/topo IV",
+   "synergy_n": 43,
+   "total_n": 47,
+   "synergy_pct": 91.49,
+   "ci": [
+    80.1,
+    96.6
+   ],
+   "antagonism_n": 1
+  },
+  {
+   "category": "Membrane",
+   "synergy_n": 10,
+   "total_n": 11,
+   "synergy_pct": 90.91,
+   "ci": [
+    62.3,
+    98.4
+   ],
+   "antagonism_n": 0
+  },
+  {
+   "category": "RNA polymerase",
+   "synergy_n": 7,
+   "total_n": 8,
+   "synergy_pct": 87.5,
+   "ci": [
+    52.9,
+    97.8
+   ],
+   "antagonism_n": 1
+  },
+  {
+   "category": "Membrane (LPS)",
+   "synergy_n": 28,
+   "total_n": 33,
+   "synergy_pct": 84.85,
+   "ci": [
+    69.1,
+    93.3
+   ],
+   "antagonism_n": 1
+  },
+  {
+   "category": "Protein synthesis (30S)",
+   "synergy_n": 42,
+   "total_n": 51,
+   "synergy_pct": 82.35,
+   "ci": [
+    69.7,
+    90.4
+   ],
+   "antagonism_n": 4
+  },
+  {
+   "category": "Cell wall (PBP)",
+   "synergy_n": 92,
+   "total_n": 112,
+   "synergy_pct": 82.14,
+   "ci": [
+    74.0,
+    88.1
+   ],
+   "antagonism_n": 6
+  },
+  {
+   "category": "Protein synthesis (50S)",
+   "synergy_n": 12,
+   "total_n": 15,
+   "synergy_pct": 80.0,
+   "ci": [
+    54.8,
+    93.0
+   ],
+   "antagonism_n": 2
+  },
+  {
+   "category": "Cell wall (MurA)",
+   "synergy_n": 3,
+   "total_n": 4,
+   "synergy_pct": 75.0,
+   "ci": [
+    30.1,
+    95.4
+   ],
+   "antagonism_n": 0
+  },
+  {
+   "category": "Cell wall (D-Ala-D-Ala)",
+   "synergy_n": 10,
+   "total_n": 14,
+   "synergy_pct": 71.43,
+   "ci": [
+    45.4,
+    88.3
+   ],
+   "antagonism_n": 1
+  }
+ ],
+ "by_class_before": [
+  {
+   "category": "Macrolide",
+   "synergy_n": 1,
+   "total_n": 1,
+   "synergy_pct": 100.0,
+   "ci": [
+    20.7,
+    100.0
+   ],
+   "antagonism_n": 0
+  },
+  {
+   "category": "Lincosamide",
+   "synergy_n": 2,
+   "total_n": 2,
+   "synergy_pct": 100.0,
+   "ci": [
+    34.2,
+    100.0
+   ],
+   "antagonism_n": 0
+  },
+  {
+   "category": "Siderophore cephalosporin",
+   "synergy_n": 1,
+   "total_n": 1,
+   "synergy_pct": 100.0,
+   "ci": [
+    20.7,
+    100.0
+   ],
+   "antagonism_n": 0
+  },
+  {
+   "category": "Cephalosporin",
+   "synergy_n": 27,
+   "total_n": 29,
+   "synergy_pct": 93.1,
+   "ci": [
+    78.0,
+    98.1
+   ],
+   "antagonism_n": 2
+  },
+  {
+   "category": "Fluoroquinolone",
+   "synergy_n": 40,
+   "total_n": 43,
+   "synergy_pct": 93.02,
+   "ci": [
+    81.4,
+    97.6
+   ],
+   "antagonism_n": 1
+  },
+  {
+   "category": "Tetracycline",
+   "synergy_n": 13,
+   "total_n": 14,
+   "synergy_pct": 92.86,
+   "ci": [
+    68.5,
+    98.7
+   ],
+   "antagonism_n": 1
+  },
+  {
+   "category": "Lipopeptide",
+   "synergy_n": 10,
+   "total_n": 11,
+   "synergy_pct": 90.91,
+   "ci": [
+    62.3,
+    98.4
+   ],
+   "antagonism_n": 0
+  },
+  {
+   "category": "Rifamycin",
+   "synergy_n": 7,
+   "total_n": 8,
+   "synergy_pct": 87.5,
+   "ci": [
+    52.9,
+    97.8
+   ],
+   "antagonism_n": 1
+  },
+  {
+   "category": "Polymyxin",
+   "synergy_n": 26,
+   "total_n": 30,
+   "synergy_pct": 86.67,
+   "ci": [
+    70.3,
+    94.7
+   ],
+   "antagonism_n": 1
+  },
+  {
+   "category": "Carbapenem",
+   "synergy_n": 38,
+   "total_n": 44,
+   "synergy_pct": 86.36,
+   "ci": [
+    73.3,
+    93.6
+   ],
+   "antagonism_n": 2
+  },
+  {
+   "category": "Oxazolidinone",
+   "synergy_n": 5,
+   "total_n": 6,
+   "synergy_pct": 83.33,
+   "ci": [
+    43.6,
+    97.0
+   ],
+   "antagonism_n": 1
+  },
+  {
+   "category": "Aminoglycoside",
+   "synergy_n": 27,
+   "total_n": 34,
+   "synergy_pct": 79.41,
+   "ci": [
+    63.2,
+    89.7
+   ],
+   "antagonism_n": 3
+  },
+  {
+   "category": "Penicillin",
+   "synergy_n": 13,
+   "total_n": 17,
+   "synergy_pct": 76.47,
+   "ci": [
+    52.7,
+    90.4
+   ],
+   "antagonism_n": 0
+  },
+  {
+   "category": "Fosfomycin",
+   "synergy_n": 3,
+   "total_n": 4,
+   "synergy_pct": 75.0,
+   "ci": [
+    30.1,
+    95.4
+   ],
+   "antagonism_n": 0
+  },
+  {
+   "category": "Glycopeptide",
+   "synergy_n": 10,
+   "total_n": 14,
+   "synergy_pct": 71.43,
+   "ci": [
+    45.4,
+    88.3
+   ],
+   "antagonism_n": 1
+  },
+  {
+   "category": "Cephalosporin/BLI",
+   "synergy_n": 4,
+   "total_n": 6,
+   "synergy_pct": 66.67,
+   "ci": [
+    30.0,
+    90.3
+   ],
+   "antagonism_n": 1
+  },
+  {
+   "category": "Amphenicol",
+   "synergy_n": 4,
+   "total_n": 6,
+   "synergy_pct": 66.67,
+   "ci": [
+    30.0,
+    90.3
+   ],
+   "antagonism_n": 1
+  },
+  {
+   "category": "Penicillin/BLI",
+   "synergy_n": 1,
+   "total_n": 2,
+   "synergy_pct": 50.0,
+   "ci": [
+    9.5,
+    90.5
+   ],
+   "antagonism_n": 0
+  }
+ ],
+ "by_mechanism_before": [
+  {
+   "category": "DNA gyrase/topo IV",
+   "synergy_n": 40,
+   "total_n": 43,
+   "synergy_pct": 93.02,
+   "ci": [
+    81.4,
+    97.6
+   ],
+   "antagonism_n": 1
+  },
+  {
+   "category": "Membrane",
+   "synergy_n": 10,
+   "total_n": 11,
+   "synergy_pct": 90.91,
+   "ci": [
+    62.3,
+    98.4
+   ],
+   "antagonism_n": 0
+  },
+  {
+   "category": "RNA polymerase",
+   "synergy_n": 7,
+   "total_n": 8,
+   "synergy_pct": 87.5,
+   "ci": [
+    52.9,
+    97.8
+   ],
+   "antagonism_n": 1
+  },
+  {
+   "category": "Membrane (LPS)",
+   "synergy_n": 26,
+   "total_n": 30,
+   "synergy_pct": 86.67,
+   "ci": [
+    70.3,
+    94.7
+   ],
+   "antagonism_n": 1
+  },
+  {
+   "category": "Cell wall (PBP)",
+   "synergy_n": 84,
+   "total_n": 99,
+   "synergy_pct": 84.85,
+   "ci": [
+    76.5,
+    90.6
+   ],
+   "antagonism_n": 5
+  },
+  {
+   "category": "Protein synthesis (30S)",
+   "synergy_n": 40,
+   "total_n": 48,
+   "synergy_pct": 83.33,
+   "ci": [
+    70.4,
+    91.3
+   ],
+   "antagonism_n": 4
+  },
+  {
+   "category": "Protein synthesis (50S)",
+   "synergy_n": 12,
+   "total_n": 15,
+   "synergy_pct": 80.0,
+   "ci": [
+    54.8,
+    93.0
+   ],
+   "antagonism_n": 2
+  },
+  {
+   "category": "Cell wall (MurA)",
+   "synergy_n": 3,
+   "total_n": 4,
+   "synergy_pct": 75.0,
+   "ci": [
+    30.1,
+    95.4
+   ],
+   "antagonism_n": 0
+  },
+  {
+   "category": "Cell wall (D-Ala-D-Ala)",
+   "synergy_n": 10,
+   "total_n": 14,
+   "synergy_pct": 71.43,
+   "ci": [
+    45.4,
+    88.3
+   ],
+   "antagonism_n": 1
+  }
+ ],
+ "by_organism_after": [
+  {
+   "organism": "K. pneumoniae",
+   "synergy_n": 54,
+   "total_n": 74,
+   "studies": 23,
+   "synergy_pct": 72.97,
+   "ci": [
+    61.9,
+    81.8
+   ],
+   "antagonism_n": 6
+  },
+  {
+   "organism": "A. baumannii",
+   "synergy_n": 61,
+   "total_n": 72,
+   "studies": 26,
+   "synergy_pct": 84.72,
+   "ci": [
+    74.7,
+    91.2
+   ],
+   "antagonism_n": 2
+  },
+  {
+   "organism": "P. aeruginosa",
+   "synergy_n": 58,
+   "total_n": 61,
+   "studies": 27,
+   "synergy_pct": 95.08,
+   "ci": [
+    86.5,
+    98.3
+   ],
+   "antagonism_n": 1
+  },
+  {
+   "organism": "E. faecium",
+   "synergy_n": 40,
+   "total_n": 45,
+   "studies": 11,
+   "synergy_pct": 88.89,
+   "ci": [
+    76.5,
+    95.2
+   ],
+   "antagonism_n": 3
+  },
+  {
+   "organism": "S. aureus",
+   "synergy_n": 33,
+   "total_n": 42,
+   "studies": 25,
+   "synergy_pct": 78.57,
+   "ci": [
+    64.1,
+    88.3
+   ],
+   "antagonism_n": 4
+  },
+  {
+   "organism": "Enterobacter spp.",
+   "synergy_n": 1,
+   "total_n": 1,
+   "studies": 1,
+   "synergy_pct": 100.0,
+   "ci": [
+    20.7,
+    100.0
+   ],
+   "antagonism_n": 0
+  }
+ ],
+ "subsets_before": {
+  "design_based": {
+   "studies": 50,
+   "arms": 209,
+   "synergy_arms_pct": 84.69,
+   "synergy_studylevel_pct": 87.46
+  },
+  "outcome_selected": {
+   "studies": 17,
+   "arms": 88,
+   "synergy_arms_pct": 62.5,
+   "synergy_studylevel_pct": 60.18
+  }
+ },
+ "subsets_after": {
+  "design_based": {
+   "studies": 55,
+   "arms": 226,
+   "synergy_arms_pct": 82.74,
+   "synergy_studylevel_pct": 85.63
+  },
+  "outcome_selected": {
+   "studies": 21,
+   "arms": 104,
+   "synergy_arms_pct": 60.58,
+   "synergy_studylevel_pct": 58.8
+  }
+ },
+ "contrast_before": {
+  "pooled": {
+   "fq_pct": 93.02,
+   "fq_n": 43,
+   "bl_pct": 84.85,
+   "bl_n": 99,
+   "gap_pp": 8.17
+  },
+  "outcome_selected": {
+   "fq_pct": 88.89,
+   "fq_n": 18,
+   "bl_pct": 48.15,
+   "bl_n": 27,
+   "gap_pp": 40.74
+  },
+  "design_based": {
+   "fq_pct": 94.12,
+   "fq_n": 34,
+   "bl_pct": 81.69,
+   "bl_n": 71,
+   "gap_pp": 12.43
+  }
+ },
+ "contrast_after": {
+  "pooled": {
+   "fq_pct": 91.49,
+   "fq_n": 47,
+   "bl_pct": 82.14,
+   "bl_n": 112,
+   "gap_pp": 9.35
+  },
+  "outcome_selected": {
+   "fq_pct": 85.71,
+   "fq_n": 21,
+   "bl_pct": 48.65,
+   "bl_n": 37,
+   "gap_pp": 37.07
+  },
+  "design_based": {
+   "fq_pct": 91.89,
+   "fq_n": 37,
+   "bl_pct": 78.75,
+   "bl_n": 80,
+   "gap_pp": 13.14
+  }
+ },
+ "paired_before": {
+  "n_studies": 23,
+  "b": 5,
+  "c": 1,
+  "both100": 16,
+  "neither100": 1,
+  "mcnemar_exact_p": 0.2188,
+  "mean_fq": 91.3,
+  "mean_bl": 75.4,
+  "diff_pp": 15.9,
+  "data": [
+   {
+    "study": "OLD:31623253",
+    "gyr": 100.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:35173237",
+    "gyr": 100.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:35736241",
+    "gyr": 100.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:35891522",
+    "gyr": 100.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:37260382",
+    "gyr": 100.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:38526142",
+    "gyr": 0.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:38653744",
+    "gyr": 100.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:39248568",
+    "gyr": 100.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:39332682",
+    "gyr": 100.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:39699213",
+    "gyr": 100.0,
+    "pbp": 0.0
+   },
+   {
+    "study": "OLD:39704503",
+    "gyr": 100.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:39925887",
+    "gyr": 100.0,
+    "pbp": 0.0
+   },
+   {
+    "study": "OLD:40143121",
+    "gyr": 100.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:40143863",
+    "gyr": 100.0,
+    "pbp": 0.0
+   },
+   {
+    "study": "OLD:40383795",
+    "gyr": 100.0,
+    "pbp": 0.0
+   },
+   {
+    "study": "OLD:40448542",
+    "gyr": 100.0,
+    "pbp": 33.33333333333333
+   },
+   {
+    "study": "OLD:40815144",
+    "gyr": 100.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:41345505",
+    "gyr": 100.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:41367424",
+    "gyr": 0.0,
+    "pbp": 0.0
+   },
+   {
+    "study": "OLD:41471203",
+    "gyr": 100.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:41900309",
+    "gyr": 100.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:42663457",
+    "gyr": 100.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:42847627",
+    "gyr": 100.0,
+    "pbp": 100.0
+   }
+  ]
+ },
+ "paired_after": {
+  "n_studies": 26,
+  "b": 6,
+  "c": 1,
+  "both100": 17,
+  "neither100": 2,
+  "mcnemar_exact_p": 0.125,
+  "mean_fq": 88.5,
+  "mean_bl": 71.8,
+  "diff_pp": 16.7,
+  "data": [
+   {
+    "study": "NEW:A15",
+    "gyr": 0.0,
+    "pbp": 0.0
+   },
+   {
+    "study": "NEW:A5",
+    "gyr": 100.0,
+    "pbp": 33.33333333333333
+   },
+   {
+    "study": "NEW:A7",
+    "gyr": 100.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:31623253",
+    "gyr": 100.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:35173237",
+    "gyr": 100.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:35736241",
+    "gyr": 100.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:35891522",
+    "gyr": 100.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:37260382",
+    "gyr": 100.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:38526142",
+    "gyr": 0.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:38653744",
+    "gyr": 100.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:39248568",
+    "gyr": 100.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:39332682",
+    "gyr": 100.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:39699213",
+    "gyr": 100.0,
+    "pbp": 0.0
+   },
+   {
+    "study": "OLD:39704503",
+    "gyr": 100.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:39925887",
+    "gyr": 100.0,
+    "pbp": 0.0
+   },
+   {
+    "study": "OLD:40143121",
+    "gyr": 100.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:40143863",
+    "gyr": 100.0,
+    "pbp": 0.0
+   },
+   {
+    "study": "OLD:40383795",
+    "gyr": 100.0,
+    "pbp": 0.0
+   },
+   {
+    "study": "OLD:40448542",
+    "gyr": 100.0,
+    "pbp": 33.33333333333333
+   },
+   {
+    "study": "OLD:40815144",
+    "gyr": 100.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:41345505",
+    "gyr": 100.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:41367424",
+    "gyr": 0.0,
+    "pbp": 0.0
+   },
+   {
+    "study": "OLD:41471203",
+    "gyr": 100.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:41900309",
+    "gyr": 100.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:42663457",
+    "gyr": 100.0,
+    "pbp": 100.0
+   },
+   {
+    "study": "OLD:42847627",
+    "gyr": 100.0,
+    "pbp": 100.0
+   }
+  ]
+ },
+ "cidal_static_before": {
+  "label": "cidal vs static",
+  "group_n": 243,
+  "group_pct": 85.19,
+  "rest_n": 29,
+  "rest_pct": 86.21,
+  "fisher_p": 1.0
+ },
+ "envelope_before": {
+  "label": "envelope-active vs other",
+  "group_n": 158,
+  "group_pct": 84.18,
+  "rest_n": 114,
+  "rest_pct": 86.84,
+  "fisher_p": 0.605
+ },
+ "cidal_static_after": {
+  "label": "cidal vs static",
+  "group_n": 266,
+  "group_pct": 83.46,
+  "rest_n": 29,
+  "rest_pct": 86.21,
+  "fisher_p": 1.0
+ },
+ "envelope_after": {
+  "label": "envelope-active vs other",
+  "group_n": 174,
+  "group_pct": 82.18,
+  "rest_n": 121,
+  "rest_pct": 85.95,
+  "fisher_p": 0.426
+ },
+ "assay_before": [
+  {
+   "assay": "Checkerboard",
+   "n": 170,
+   "synergy_n": 145,
+   "synergy_pct": 85.29
+  },
+  {
+   "assay": "Biofilm",
+   "n": 45,
+   "synergy_n": 38,
+   "synergy_pct": 84.44
+  },
+  {
+   "assay": "Time-Kill",
+   "n": 37,
+   "synergy_n": 31,
+   "synergy_pct": 83.78
+  },
+  {
+   "assay": "In Vivo",
+   "n": 17,
+   "synergy_n": 15,
+   "synergy_pct": 88.24
+  }
+ ],
+ "assay_after": [
+  {
+   "assay": "Checkerboard",
+   "n": 180,
+   "synergy_n": 150,
+   "synergy_pct": 83.33
+  },
+  {
+   "assay": "Biofilm",
+   "n": 46,
+   "synergy_n": 39,
+   "synergy_pct": 84.78
+  },
+  {
+   "assay": "Time-Kill",
+   "n": 37,
+   "synergy_n": 31,
+   "synergy_pct": 83.78
+  },
+  {
+   "assay": "In Vivo",
+   "n": 17,
+   "synergy_n": 15,
+   "synergy_pct": 88.24
+  }
+ ],
+ "flow_after": {
+  "records_identified": 4402,
+  "excluded_at_triage_score_lt_14": null,
+  "prioritised_published": 254,
+  "prioritised_revised": 282,
+  "additional_screened": 28,
+  "additional_included": 9,
+  "fulltext_parsed_published": 210,
+  "fulltext_parsed_revised": 231,
+  "abstract_only_published": 44,
+  "abstract_only_revised": 51,
+  "excluded_at_eligibility_published": 97,
+  "excluded_at_eligibility_revised": 116,
+  "studies_included_published": 157,
+  "studies_included_revised": 166,
+  "observations_published": 419,
+  "observations_revised": 442,
+  "determinate_published": 272,
+  "determinate_revised": 295
+ },
+ "threshold_ladder": {
+  ">=20": 44,
+  ">=18": 83,
+  ">=16": 151,
+  ">=14": 254,
+  ">=12": 403,
+  ">=10": 607
+ },
+ "threshold_ladder_revised": {
+  ">=20": 48,
+  ">=18": 93,
+  ">=16": 167,
+  ">=14": 282,
+  ">=12": 440,
+  ">=10": 660
+ },
+ "gee_after": {
+  "label": "reanalysed (166-study)",
+  "design_based_studies": 55,
+  "gee_arms": 117,
+  "OR": 3.97,
+  "ci": [
+   0.59,
+   26.59
+  ],
+  "p": 0.156,
+  "fq_arms": 37,
+  "bl_arms": 80
+ },
+ "gee_before": {
+  "label": "published (157-study)",
+  "design_based_studies": 50,
+  "gee_arms": 105,
+  "OR": 4.62,
+  "ci": [
+   0.45,
+   47.26
+  ],
+  "p": 0.197,
+  "fq_arms": 34,
+  "bl_arms": 71
+ }
+}

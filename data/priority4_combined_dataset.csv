@@ -1,0 +1,296 @@
+study,Organism,Antibiotic_Class,Antibiotic_Mechanism,Bactericidal_Static,Assay,Dosing_Sequence,Antibiotic_Name,Synergy_Outcome,Interaction_Classification
+OLD:10.1101/2023.10.03.560795,P. aeruginosa,Fluoroquinolone,DNA gyrase/topo IV,cidal,Biofilm,Simultaneous,Ciprofloxacin,1.0,Synergy
+OLD:10.64898/2026.10.27.759484,S. aureus,Carbapenem,Cell wall (PBP),cidal,Biofilm,,Meropenem,1.0,Synergy
+OLD:10.64898/2026.10.27.759484,S. aureus,Cephalosporin,Cell wall (PBP),cidal,Biofilm,,Ceftazidime,1.0,Synergy
+OLD:10.64898/2026.10.27.759484,S. aureus,Polymyxin,Membrane (LPS),cidal,Biofilm,,Polymyxin B,1.0,Synergy
+OLD:31623253,E. faecium,Glycopeptide,Cell wall (D-Ala-D-Ala),cidal,Checkerboard,Antibiotic-first,Vancomycin,1.0,Synergy
+OLD:31623253,E. faecium,Carbapenem,Cell wall (PBP),cidal,Checkerboard; Biofilm; In Vivo,Antibiotic-first,Meropenem,1.0,Synergy
+OLD:31623253,E. faecium,Fluoroquinolone,DNA gyrase/topo IV,cidal,Checkerboard; Biofilm; In Vivo,Antibiotic-first,Ciprofloxacin,1.0,Synergy
+OLD:31623253,E. faecium,Tetracycline,Protein synthesis (30S),static,Checkerboard; Biofilm; In Vivo,Antibiotic-first,Tetracycline,1.0,Synergy
+OLD:33649110,E. faecium,Cephalosporin,Cell wall (PBP),cidal,,,Ceftriaxone,1.0,Synergy
+OLD:33649110,E. faecium,Lipopeptide,Membrane,cidal,,,Daptomycin,1.0,Synergy
+OLD:33649110,E. faecium,Penicillin,Cell wall (PBP),cidal,,,Ampicillin,1.0,Synergy
+OLD:34356770,S. aureus,Penicillin,Cell wall (PBP),cidal,Checkerboard; Time-Kill; In Vivo,Simultaneous,Oxacillin,1.0,Synergy
+OLD:35173237,A. baumannii,Polymyxin,Membrane (LPS),cidal,In Vivo,Simultaneous,Colistin,1.0,Synergy
+OLD:35173237,A. baumannii,Carbapenem,Cell wall (PBP),cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Meropenem,1.0,Synergy
+OLD:35173237,A. baumannii,Fluoroquinolone,DNA gyrase/topo IV,cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Ciprofloxacin,1.0,Synergy
+OLD:35173237,A. baumannii,Polymyxin,Membrane (LPS),cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Polymyxin B,0.0,Indifferent
+OLD:35326855,E. faecium,Carbapenem,Cell wall (PBP),cidal,Time-Kill,Simultaneous,Ertapenem,1.0,Synergy
+OLD:35326855,E. faecium,Cephalosporin,Cell wall (PBP),cidal,Time-Kill,Simultaneous,Ceftaroline,1.0,Synergy
+OLD:35326855,E. faecium,Penicillin,Cell wall (PBP),cidal,Time-Kill,Simultaneous,Ampicillin,1.0,Synergy
+OLD:35348366,S. aureus,Lipopeptide,Membrane,cidal,Biofilm,Simultaneous,Daptomycin,1.0,Synergy
+OLD:35537278,A. baumannii,Cephalosporin,Cell wall (PBP),cidal,Checkerboard; Time-Kill; In Vivo,Simultaneous,Ceftazidime,0.0,Antagonism
+OLD:35537278,A. baumannii,Carbapenem,Cell wall (PBP),cidal,In Vivo,Simultaneous,Meropenem,1.0,Synergy
+OLD:35537278,A. baumannii,Carbapenem,Cell wall (PBP),cidal,In Vivo,Simultaneous,Imipenem,1.0,Synergy
+OLD:35537278,A. baumannii,Polymyxin,Membrane (LPS),cidal,In Vivo,Simultaneous,Colistin,1.0,Synergy
+OLD:35547216,P. aeruginosa,Cephalosporin/BLI,Cell wall (PBP),cidal,Biofilm,Simultaneous,Ceftazidime-avibactam,0.0,Additive
+OLD:35652690,P. aeruginosa,Carbapenem,Cell wall (PBP),cidal,Time-Kill; In Vivo,,Meropenem,1.0,Synergy
+OLD:35736241,A. baumannii,Carbapenem,Cell wall (PBP),cidal,Time-Kill,Simultaneous,Imipenem,1.0,Synergy
+OLD:35736241,A. baumannii,Cephalosporin,Cell wall (PBP),cidal,Time-Kill,Simultaneous,Cefotaxime,1.0,Synergy
+OLD:35736241,A. baumannii,Amphenicol,Protein synthesis (50S),static,Time-Kill,Simultaneous,Chloramphenicol,1.0,Synergy
+OLD:35736241,A. baumannii,Tetracycline,Protein synthesis (30S),static,Time-Kill,Simultaneous,Minocycline,1.0,Synergy
+OLD:35736241,A. baumannii,Aminoglycoside,Protein synthesis (30S),cidal,Time-Kill,Simultaneous,Amikacin,1.0,Synergy
+OLD:35736241,A. baumannii,Aminoglycoside,Protein synthesis (30S),cidal,Time-Kill,Simultaneous,Gentamicin,1.0,Synergy
+OLD:35736241,A. baumannii,Fluoroquinolone,DNA gyrase/topo IV,cidal,Time-Kill,Simultaneous,Ciprofloxacin,1.0,Synergy
+OLD:35891522,S. aureus,Cephalosporin,Cell wall (PBP),cidal,Checkerboard; Time-Kill,Simultaneous,Ceftriaxone,1.0,Synergy
+OLD:35891522,S. aureus,Fluoroquinolone,DNA gyrase/topo IV,cidal,Checkerboard; Time-Kill,Simultaneous,Ciprofloxacin,1.0,Synergy
+OLD:36016414,S. aureus,Glycopeptide,Cell wall (D-Ala-D-Ala),cidal,Checkerboard; Time-Kill; In Vivo,Simultaneous,Vancomycin,1.0,Synergy
+OLD:36057417,S. aureus,Aminoglycoside,Protein synthesis (30S),cidal,Time-Kill,Simultaneous,Gentamicin,0.0,Antagonism
+OLD:36057417,S. aureus,Tetracycline,Protein synthesis (30S),static,Time-Kill,Simultaneous,Tetracycline,0.0,Antagonism
+OLD:36175406,P. aeruginosa,Polymyxin,Membrane (LPS),cidal,Checkerboard; Biofilm; In Vivo,Simultaneous,Colistin,1.0,Synergy
+OLD:36472428,Enterobacter spp.,Fluoroquinolone,DNA gyrase/topo IV,cidal,Checkerboard; Time-Kill; In Vivo,,Ciprofloxacin,1.0,Synergy
+OLD:36851674,S. aureus,Glycopeptide,Cell wall (D-Ala-D-Ala),cidal,Biofilm,Simultaneous,Vancomycin,0.0,Indifferent
+OLD:36851674,S. aureus,Aminoglycoside,Protein synthesis (30S),cidal,Biofilm,Simultaneous,Gentamicin,1.0,Synergy
+OLD:36861092,P. aeruginosa,Carbapenem,Cell wall (PBP),cidal,Biofilm,Simultaneous,Meropenem,1.0,Synergy
+OLD:37024490,E. faecium,Glycopeptide,Cell wall (D-Ala-D-Ala),cidal,Checkerboard,Simultaneous,Vancomycin,1.0,Synergy
+OLD:37156803,A. baumannii,Polymyxin,Membrane (LPS),cidal,Checkerboard,Simultaneous,Colistin,1.0,Synergy
+OLD:37156803,A. baumannii,Polymyxin,Membrane (LPS),cidal,Checkerboard,Simultaneous,Polymyxin B,1.0,Synergy
+OLD:37199616,S. aureus,Glycopeptide,Cell wall (D-Ala-D-Ala),cidal,Checkerboard; Time-Kill; Biofilm,Simultaneous,Vancomycin,1.0,Synergy
+OLD:37199616,S. aureus,Cephalosporin,Cell wall (PBP),cidal,Checkerboard; Time-Kill; Biofilm,Simultaneous,Ceftaroline,1.0,Synergy
+OLD:37199616,S. aureus,Lipopeptide,Membrane,cidal,Checkerboard; Time-Kill; Biofilm,Simultaneous,Daptomycin,1.0,Synergy
+OLD:37199616,S. aureus,Rifamycin,RNA polymerase,cidal,Checkerboard; Time-Kill; Biofilm,Simultaneous,Rifampicin,1.0,Synergy
+OLD:37260382,A. baumannii,Carbapenem,Cell wall (PBP),cidal,Time-Kill,Simultaneous,Meropenem,1.0,Synergy
+OLD:37260382,A. baumannii,Cephalosporin,Cell wall (PBP),cidal,Time-Kill,Simultaneous,Cefotaxime,1.0,Synergy
+OLD:37260382,A. baumannii,Cephalosporin,Cell wall (PBP),cidal,Time-Kill,Simultaneous,Ceftazidime,1.0,Synergy
+OLD:37260382,A. baumannii,Carbapenem,Cell wall (PBP),cidal,Time-Kill,Simultaneous,Imipenem,1.0,Synergy
+OLD:37260382,A. baumannii,Penicillin,Cell wall (PBP),cidal,Time-Kill,Simultaneous,Piperacillin,1.0,Synergy
+OLD:37260382,A. baumannii,Aminoglycoside,Protein synthesis (30S),cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Gentamicin,1.0,Synergy
+OLD:37260382,A. baumannii,Fluoroquinolone,DNA gyrase/topo IV,cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Ciprofloxacin,1.0,Synergy
+OLD:37260382,A. baumannii,Tetracycline,Protein synthesis (30S),static,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Tetracycline,1.0,Synergy
+OLD:37260382,A. baumannii,Tetracycline,Protein synthesis (30S),static,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Minocycline,1.0,Synergy
+OLD:37260382,A. baumannii,Amphenicol,Protein synthesis (50S),static,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Chloramphenicol,1.0,Synergy
+OLD:37338375,E. faecium,Cephalosporin,Cell wall (PBP),cidal,Time-Kill,Simultaneous,Ceftaroline,1.0,Synergy
+OLD:37338375,E. faecium,Lipopeptide,Membrane,cidal,Time-Kill,Simultaneous,Daptomycin,1.0,Synergy
+OLD:37377167,S. aureus,Fluoroquinolone,DNA gyrase/topo IV,cidal,Biofilm,Simultaneous,Ciprofloxacin,1.0,Synergy
+OLD:37377167,S. aureus,Aminoglycoside,Protein synthesis (30S),cidal,Biofilm,Simultaneous,Tobramycin,0.0,Indifferent
+OLD:37377167,S. aureus,Fosfomycin,Cell wall (MurA),cidal,Checkerboard; Biofilm; In Vivo,Simultaneous,Fosfomycin,0.0,Indifferent
+OLD:37377167,S. aureus,Rifamycin,RNA polymerase,cidal,Biofilm,Simultaneous,Rifampicin,1.0,Synergy
+OLD:37574030,A. baumannii,Polymyxin,Membrane (LPS),cidal,Biofilm,Simultaneous,Colistin,1.0,Synergy
+OLD:37608144,P. aeruginosa,Aminoglycoside,Protein synthesis (30S),cidal,Checkerboard,Simultaneous,Gentamicin,1.0,Synergy
+OLD:37608144,P. aeruginosa,Fluoroquinolone,DNA gyrase/topo IV,cidal,Checkerboard,Simultaneous,Ciprofloxacin,1.0,Synergy
+OLD:37764196,A. baumannii,Aminoglycoside,Protein synthesis (30S),cidal,Biofilm,Simultaneous,Gentamicin,0.0,Antagonism
+OLD:38133282,K. pneumoniae,Polymyxin,Membrane (LPS),cidal,Biofilm,Simultaneous,Polymyxin B,1.0,Synergy
+OLD:38411110,S. aureus,Cephalosporin,Cell wall (PBP),cidal,Checkerboard; Time-Kill; Biofilm,Simultaneous,Ceftaroline,1.0,Synergy
+OLD:38411110,S. aureus,Lipopeptide,Membrane,cidal,Checkerboard; Time-Kill; Biofilm,Simultaneous,Daptomycin,1.0,Synergy
+OLD:38526142,E. faecium,Glycopeptide,Cell wall (D-Ala-D-Ala),cidal,Checkerboard,Simultaneous,Vancomycin,1.0,Synergy
+OLD:38526142,E. faecium,Penicillin,Cell wall (PBP),cidal,Checkerboard; In Vivo,Simultaneous,Ampicillin,1.0,Synergy
+OLD:38526142,E. faecium,Cephalosporin,Cell wall (PBP),cidal,Checkerboard; In Vivo,Simultaneous,Ceftazidime,1.0,Synergy
+OLD:38526142,E. faecium,Oxazolidinone,Protein synthesis (50S),static,Checkerboard; In Vivo,Simultaneous,Linezolid,1.0,Synergy
+OLD:38526142,E. faecium,Fluoroquinolone,DNA gyrase/topo IV,cidal,Checkerboard,Simultaneous,Levofloxacin,0.0,Antagonism
+OLD:38653744,P. aeruginosa,Fluoroquinolone,DNA gyrase/topo IV,cidal,Biofilm,Simultaneous,Ciprofloxacin,1.0,Synergy
+OLD:38653744,P. aeruginosa,Cephalosporin,Cell wall (PBP),cidal,Biofilm,Simultaneous,Cefotaxime,1.0,Synergy
+OLD:38653744,P. aeruginosa,Carbapenem,Cell wall (PBP),cidal,Biofilm,Simultaneous,Meropenem,1.0,Synergy
+OLD:38653744,P. aeruginosa,Tetracycline,Protein synthesis (30S),static,Biofilm,Simultaneous,Tetracycline,1.0,Synergy
+OLD:38653744,P. aeruginosa,Aminoglycoside,Protein synthesis (30S),cidal,Biofilm,Simultaneous,Gentamicin,1.0,Synergy
+OLD:38659581,S. aureus,Glycopeptide,Cell wall (D-Ala-D-Ala),cidal,Checkerboard,Simultaneous,Vancomycin,1.0,Synergy
+OLD:38742904,A. baumannii,Carbapenem,Cell wall (PBP),cidal,In Vivo,,Meropenem,1.0,Synergy
+OLD:39061362,A. baumannii,Rifamycin,RNA polymerase,cidal,Checkerboard,Simultaneous,Rifampicin,1.0,Synergy
+OLD:39061362,A. baumannii,Tetracycline,Protein synthesis (30S),static,Checkerboard,Simultaneous,Tigecycline,1.0,Synergy
+OLD:39061362,A. baumannii,Polymyxin,Membrane (LPS),cidal,Checkerboard,Simultaneous,Colistin,1.0,Synergy
+OLD:39061362,A. baumannii,Penicillin/BLI,Cell wall (PBP),cidal,Checkerboard,Simultaneous,Ampicillin-sulbactam,1.0,Synergy
+OLD:39061362,A. baumannii,Penicillin,Cell wall (PBP),cidal,Checkerboard,Simultaneous,Ampicillin,1.0,Synergy
+OLD:39082827,E. faecium,Cephalosporin,Cell wall (PBP),cidal,Biofilm,Simultaneous,Cefepime,1.0,Synergy
+OLD:39082827,E. faecium,Cephalosporin,Cell wall (PBP),cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Ceftaroline,1.0,Synergy
+OLD:39082827,E. faecium,Lipopeptide,Membrane,cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Daptomycin,1.0,Synergy
+OLD:39082827,E. faecium,Cephalosporin,Cell wall (PBP),cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Ceftazidime,1.0,Synergy
+OLD:39082827,E. faecium,Aminoglycoside,Protein synthesis (30S),cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Kanamycin,1.0,Synergy
+OLD:39166877,K. pneumoniae,Polymyxin,Membrane (LPS),cidal,Checkerboard; In Vivo,Simultaneous,Colistin,1.0,Synergy
+OLD:39166877,K. pneumoniae,Tetracycline,Protein synthesis (30S),static,Checkerboard; In Vivo,Simultaneous,Tigecycline,1.0,Synergy
+OLD:39209878,S. aureus,Glycopeptide,Cell wall (D-Ala-D-Ala),cidal,Checkerboard; Biofilm; In Vivo,Simultaneous,Vancomycin,1.0,Synergy
+OLD:39248568,K. pneumoniae,Cephalosporin,Cell wall (PBP),cidal,Checkerboard; Time-Kill; In Vivo,Simultaneous,Ceftazidime,1.0,Synergy
+OLD:39248568,K. pneumoniae,Aminoglycoside,Protein synthesis (30S),cidal,Checkerboard,Simultaneous,Kanamycin,0.0,Indifferent
+OLD:39248568,K. pneumoniae,Amphenicol,Protein synthesis (50S),static,Checkerboard,Simultaneous,Chloramphenicol,0.0,Indifferent
+OLD:39248568,K. pneumoniae,Carbapenem,Cell wall (PBP),cidal,Checkerboard; Time-Kill; In Vivo,Simultaneous,Meropenem,1.0,Synergy
+OLD:39248568,K. pneumoniae,Polymyxin,Membrane (LPS),cidal,Checkerboard,Simultaneous,Polymyxin B,1.0,Synergy
+OLD:39248568,K. pneumoniae,Fluoroquinolone,DNA gyrase/topo IV,cidal,Checkerboard; Time-Kill; In Vivo,Simultaneous,Ciprofloxacin,1.0,Synergy
+OLD:39248568,K. pneumoniae,Fluoroquinolone,DNA gyrase/topo IV,cidal,Checkerboard; Time-Kill; In Vivo,Simultaneous,Levofloxacin,1.0,Synergy
+OLD:39248568,K. pneumoniae,Rifamycin,RNA polymerase,cidal,Checkerboard,Simultaneous,Rifampicin,1.0,Synergy
+OLD:39332682,K. pneumoniae,Carbapenem,Cell wall (PBP),cidal,Checkerboard,Simultaneous,Meropenem,1.0,Synergy
+OLD:39332682,K. pneumoniae,Aminoglycoside,Protein synthesis (30S),cidal,Checkerboard,Simultaneous,Amikacin,1.0,Synergy
+OLD:39332682,K. pneumoniae,Fluoroquinolone,DNA gyrase/topo IV,cidal,Checkerboard,Simultaneous,Levofloxacin,1.0,Synergy
+OLD:39334975,P. aeruginosa,Carbapenem,Cell wall (PBP),cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Doripenem,1.0,Synergy
+OLD:39470283,S. aureus,Lipopeptide,Membrane,cidal,Checkerboard,Simultaneous,Daptomycin,1.0,Synergy
+OLD:39530158,P. aeruginosa,Cephalosporin/BLI,Cell wall (PBP),cidal,Biofilm,Simultaneous,Ceftolozane-tazobactam,1.0,Synergy
+OLD:39597505,P. aeruginosa,Polymyxin,Membrane (LPS),cidal,Checkerboard; Biofilm,Simultaneous,Colistin,1.0,Synergy
+OLD:39597505,P. aeruginosa,Rifamycin,RNA polymerase,cidal,Biofilm,Simultaneous,Rifampicin,1.0,Synergy
+OLD:39699213,E. faecium,Glycopeptide,Cell wall (D-Ala-D-Ala),cidal,Checkerboard,Simultaneous,Vancomycin,0.0,Indifferent
+OLD:39699213,E. faecium,Oxazolidinone,Protein synthesis (50S),static,Checkerboard,Simultaneous,Linezolid,0.0,Antagonism
+OLD:39699213,E. faecium,Penicillin,Cell wall (PBP),cidal,Checkerboard,Simultaneous,Ampicillin,0.0,Indifferent
+OLD:39699213,E. faecium,Aminoglycoside,Protein synthesis (30S),cidal,Checkerboard; Time-Kill,Simultaneous,Gentamicin,1.0,Synergy
+OLD:39699213,E. faecium,Aminoglycoside,Protein synthesis (30S),cidal,Checkerboard; Time-Kill,Simultaneous,Streptomycin,1.0,Synergy
+OLD:39699213,E. faecium,Fluoroquinolone,DNA gyrase/topo IV,cidal,Checkerboard; Time-Kill,Simultaneous,Levofloxacin,1.0,Synergy
+OLD:39699213,E. faecium,Tetracycline,Protein synthesis (30S),static,Checkerboard; Time-Kill,Simultaneous,Tetracycline,1.0,Synergy
+OLD:39699213,E. faecium,Tetracycline,Protein synthesis (30S),static,Checkerboard; Time-Kill,Simultaneous,Minocycline,1.0,Synergy
+OLD:39699213,E. faecium,Macrolide,Protein synthesis (50S),static,Checkerboard; Time-Kill,Simultaneous,Erythromycin,1.0,Synergy
+OLD:39699213,E. faecium,Lincosamide,Protein synthesis (50S),static,Checkerboard; Time-Kill,Simultaneous,Clindamycin,1.0,Synergy
+OLD:39704503,P. aeruginosa,Fluoroquinolone,DNA gyrase/topo IV,cidal,Checkerboard; Time-Kill; Biofilm,Simultaneous,Ciprofloxacin,1.0,Synergy
+OLD:39704503,P. aeruginosa,Penicillin,Cell wall (PBP),cidal,Checkerboard; Time-Kill; Biofilm,Simultaneous,Piperacillin,1.0,Synergy
+OLD:39704503,P. aeruginosa,Carbapenem,Cell wall (PBP),cidal,Checkerboard; Time-Kill; Biofilm,Simultaneous,Meropenem,1.0,Synergy
+OLD:39704503,P. aeruginosa,Aminoglycoside,Protein synthesis (30S),cidal,Checkerboard; Time-Kill; Biofilm,Simultaneous,Tobramycin,1.0,Synergy
+OLD:39704503,P. aeruginosa,Polymyxin,Membrane (LPS),cidal,Checkerboard,Simultaneous,Polymyxin B,1.0,Synergy
+OLD:39704503,P. aeruginosa,Fluoroquinolone,DNA gyrase/topo IV,cidal,Checkerboard,Simultaneous,Levofloxacin,1.0,Synergy
+OLD:39704532,K. pneumoniae,Cephalosporin/BLI,Cell wall (PBP),cidal,In Vivo,Simultaneous,Ceftazidime-avibactam,1.0,Synergy
+OLD:39735565,A. baumannii,Polymyxin,Membrane (LPS),cidal,Checkerboard,Simultaneous,Colistin,1.0,Synergy
+OLD:39760077,S. aureus,Oxazolidinone,Protein synthesis (50S),static,Checkerboard; Biofilm,Simultaneous,Linezolid,1.0,Synergy
+OLD:39870739,S. aureus,Penicillin,Cell wall (PBP),cidal,Checkerboard; Time-Kill; Biofilm,Simultaneous,Amoxicillin,1.0,Synergy
+OLD:39912979,S. aureus,Aminoglycoside,Protein synthesis (30S),cidal,In Vivo,Simultaneous,Gentamicin,1.0,Synergy
+OLD:39925887,E. faecium,Fluoroquinolone,DNA gyrase/topo IV,cidal,Biofilm,Simultaneous,Levofloxacin,1.0,Synergy
+OLD:39925887,E. faecium,Fluoroquinolone,DNA gyrase/topo IV,cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Ciprofloxacin,1.0,Synergy
+OLD:39925887,E. faecium,Oxazolidinone,Protein synthesis (50S),static,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Linezolid,1.0,Synergy
+OLD:39925887,E. faecium,Lipopeptide,Membrane,cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Daptomycin,1.0,Synergy
+OLD:39925887,E. faecium,Cephalosporin,Cell wall (PBP),cidal,Checkerboard; Biofilm; In Vivo,Simultaneous,Cefotaxime,0.0,Antagonism
+OLD:39982075,S. aureus,Glycopeptide,Cell wall (D-Ala-D-Ala),cidal,Biofilm,Simultaneous,Vancomycin,0.0,Additive
+OLD:40143121,P. aeruginosa,Aminoglycoside,Protein synthesis (30S),cidal,Checkerboard; Biofilm; In Vivo,Simultaneous,Amikacin,1.0,Synergy
+OLD:40143121,P. aeruginosa,Fluoroquinolone,DNA gyrase/topo IV,cidal,Checkerboard; Biofilm; In Vivo,Simultaneous,Ciprofloxacin,1.0,Synergy
+OLD:40143121,P. aeruginosa,Carbapenem,Cell wall (PBP),cidal,Checkerboard; Biofilm; In Vivo,Simultaneous,Meropenem,1.0,Synergy
+OLD:40143121,P. aeruginosa,Polymyxin,Membrane (LPS),cidal,Checkerboard,Simultaneous,Colistin,1.0,Synergy
+OLD:40143863,K. pneumoniae,Fluoroquinolone,DNA gyrase/topo IV,cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Levofloxacin,1.0,Synergy
+OLD:40143863,K. pneumoniae,Carbapenem,Cell wall (PBP),cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Meropenem,0.0,Antagonism
+OLD:40143863,K. pneumoniae,Aminoglycoside,Protein synthesis (30S),cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Gentamicin,0.0,Antagonism
+OLD:40143863,K. pneumoniae,Amphenicol,Protein synthesis (50S),static,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Chloramphenicol,0.0,Antagonism
+OLD:40143863,K. pneumoniae,Oxazolidinone,Protein synthesis (50S),static,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Linezolid,1.0,Synergy
+OLD:40143863,K. pneumoniae,Fluoroquinolone,DNA gyrase/topo IV,cidal,Biofilm,Simultaneous,Ciprofloxacin,1.0,Synergy
+OLD:40185918,A. baumannii,Cephalosporin,Cell wall (PBP),cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Ceftazidime,1.0,Synergy
+OLD:40185918,A. baumannii,Penicillin,Cell wall (PBP),cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Piperacillin,0.0,Indifferent
+OLD:40191302,S. aureus,Glycopeptide,Cell wall (D-Ala-D-Ala),cidal,Time-Kill,Simultaneous,Vancomycin,0.0,Antagonism
+OLD:40231317,K. pneumoniae,Cephalosporin/BLI,Cell wall (PBP),cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Ceftazidime-avibactam,1.0,Synergy
+OLD:40265927,K. pneumoniae,Carbapenem,Cell wall (PBP),cidal,Checkerboard,Simultaneous,Meropenem,1.0,Synergy
+OLD:40265927,K. pneumoniae,Aminoglycoside,Protein synthesis (30S),cidal,Checkerboard; Biofilm; In Vivo,Simultaneous,Amikacin,1.0,Synergy
+OLD:40265927,K. pneumoniae,Fosfomycin,Cell wall (MurA),cidal,Checkerboard; Biofilm; In Vivo,Simultaneous,Fosfomycin,1.0,Synergy
+OLD:40383795,K. pneumoniae,Carbapenem,Cell wall (PBP),cidal,Checkerboard,Simultaneous,Doripenem,0.0,Additive
+OLD:40383795,K. pneumoniae,Carbapenem,Cell wall (PBP),cidal,Checkerboard,Simultaneous,Imipenem,0.0,Additive
+OLD:40383795,K. pneumoniae,Aminoglycoside,Protein synthesis (30S),cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Gentamicin,0.0,Indifferent
+OLD:40383795,K. pneumoniae,Fluoroquinolone,DNA gyrase/topo IV,cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Ciprofloxacin,1.0,Synergy
+OLD:40383795,K. pneumoniae,Fluoroquinolone,DNA gyrase/topo IV,cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Levofloxacin,1.0,Synergy
+OLD:40383795,K. pneumoniae,Penicillin,Cell wall (PBP),cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Piperacillin,0.0,Indifferent
+OLD:40389237,S. aureus,Fluoroquinolone,DNA gyrase/topo IV,cidal,Biofilm,Simultaneous,Ciprofloxacin,1.0,Synergy
+OLD:40389237,S. aureus,Rifamycin,RNA polymerase,cidal,Biofilm,Simultaneous,Rifampicin,1.0,Synergy
+OLD:40440204,K. pneumoniae,Cephalosporin,Cell wall (PBP),cidal,In Vivo,Simultaneous,Cefotaxime,1.0,Synergy
+OLD:40448542,K. pneumoniae,Aminoglycoside,Protein synthesis (30S),cidal,Time-Kill,Simultaneous,Amikacin,1.0,Synergy
+OLD:40448542,K. pneumoniae,Carbapenem,Cell wall (PBP),cidal,Checkerboard; Time-Kill; In Vivo,Simultaneous,Meropenem,0.0,Antagonism
+OLD:40448542,K. pneumoniae,Cephalosporin/BLI,Cell wall (PBP),cidal,Time-Kill,Simultaneous,Ceftazidime-avibactam,0.0,Antagonism
+OLD:40448542,K. pneumoniae,Fluoroquinolone,DNA gyrase/topo IV,cidal,Checkerboard,Simultaneous,Ciprofloxacin,1.0,Synergy
+OLD:40448542,K. pneumoniae,Polymyxin,Membrane (LPS),cidal,Checkerboard; Time-Kill; In Vivo,Simultaneous,Colistin,1.0,Synergy
+OLD:40448542,K. pneumoniae,Carbapenem,Cell wall (PBP),cidal,Checkerboard; Time-Kill; In Vivo,Simultaneous,Imipenem,1.0,Synergy
+OLD:40508147,P. aeruginosa,Carbapenem,Cell wall (PBP),cidal,In Vivo,Simultaneous,Imipenem,1.0,Synergy
+OLD:40508147,P. aeruginosa,Aminoglycoside,Protein synthesis (30S),cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Gentamicin,1.0,Synergy
+OLD:40558128,A. baumannii,Polymyxin,Membrane (LPS),cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Colistin,1.0,Synergy
+OLD:40733556,P. aeruginosa,Fluoroquinolone,DNA gyrase/topo IV,cidal,Checkerboard; Time-Kill,Simultaneous,Ciprofloxacin,1.0,Synergy
+OLD:40744162,P. aeruginosa,Fluoroquinolone,DNA gyrase/topo IV,cidal,Biofilm; In Vivo,,Ciprofloxacin,1.0,Synergy
+OLD:40790594,P. aeruginosa,Aminoglycoside,Protein synthesis (30S),cidal,In Vivo,Simultaneous,Amikacin,1.0,Synergy
+OLD:40810601,A. baumannii,Polymyxin,Membrane (LPS),cidal,In Vivo,Simultaneous,Colistin,0.0,Indifferent
+OLD:40810601,A. baumannii,Carbapenem,Cell wall (PBP),cidal,Checkerboard,Phage-first,Meropenem,0.0,Indifferent
+OLD:40810601,A. baumannii,Tetracycline,Protein synthesis (30S),static,Checkerboard,Phage-first,Tigecycline,1.0,Synergy
+OLD:40810601,A. baumannii,Penicillin/BLI,Cell wall (PBP),cidal,Checkerboard,Phage-first,Ampicillin-sulbactam,0.0,Indifferent
+OLD:40810601,A. baumannii,Penicillin,Cell wall (PBP),cidal,Checkerboard,Phage-first,Ampicillin,0.0,Indifferent
+OLD:40815144,K. pneumoniae,Carbapenem,Cell wall (PBP),cidal,Time-Kill; Biofilm,Simultaneous,Imipenem,1.0,Synergy
+OLD:40815144,K. pneumoniae,Fluoroquinolone,DNA gyrase/topo IV,cidal,Time-Kill; Biofilm,Simultaneous,Ciprofloxacin,1.0,Synergy
+OLD:40823828,P. aeruginosa,Fluoroquinolone,DNA gyrase/topo IV,cidal,In Vivo,Simultaneous,Ciprofloxacin,0.0,Indifferent
+OLD:40835923,K. pneumoniae,Aminoglycoside,Protein synthesis (30S),cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Gentamicin,1.0,Synergy
+OLD:41017913,A. baumannii,Penicillin,Cell wall (PBP),cidal,Biofilm,Simultaneous,Ampicillin,1.0,Synergy
+OLD:41039237,P. aeruginosa,Carbapenem,Cell wall (PBP),cidal,Biofilm,Simultaneous,Meropenem,1.0,Synergy
+OLD:41039237,P. aeruginosa,Cephalosporin,Cell wall (PBP),cidal,Checkerboard; Biofilm,Simultaneous,Cefepime,1.0,Synergy
+OLD:41039237,P. aeruginosa,Cephalosporin,Cell wall (PBP),cidal,Checkerboard; Biofilm,Simultaneous,Ceftazidime,1.0,Synergy
+OLD:41039237,P. aeruginosa,Penicillin,Cell wall (PBP),cidal,Checkerboard; Biofilm,Simultaneous,Piperacillin,1.0,Synergy
+OLD:41044673,K. pneumoniae,Aminoglycoside,Protein synthesis (30S),cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Gentamicin,1.0,Synergy
+OLD:41044673,K. pneumoniae,Fluoroquinolone,DNA gyrase/topo IV,cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Ciprofloxacin,1.0,Synergy
+OLD:41258817,E. faecium,Fosfomycin,Cell wall (MurA),cidal,Biofilm,Simultaneous,Fosfomycin,1.0,Synergy
+OLD:41258817,E. faecium,Lipopeptide,Membrane,cidal,Biofilm,Simultaneous,Daptomycin,1.0,Synergy
+OLD:41258817,E. faecium,Glycopeptide,Cell wall (D-Ala-D-Ala),cidal,Biofilm,Simultaneous,Vancomycin,1.0,Synergy
+OLD:41345505,P. aeruginosa,Fluoroquinolone,DNA gyrase/topo IV,cidal,Checkerboard; Time-Kill; In Vivo,Simultaneous,Ciprofloxacin,1.0,Synergy
+OLD:41345505,P. aeruginosa,Carbapenem,Cell wall (PBP),cidal,Checkerboard; Time-Kill; In Vivo,Simultaneous,Meropenem,1.0,Synergy
+OLD:41345505,P. aeruginosa,Cephalosporin,Cell wall (PBP),cidal,Checkerboard; Time-Kill; In Vivo,Simultaneous,Ceftazidime,1.0,Synergy
+OLD:41345505,P. aeruginosa,Tetracycline,Protein synthesis (30S),static,Checkerboard; Time-Kill; In Vivo,Simultaneous,Minocycline,1.0,Synergy
+OLD:41346627,P. aeruginosa,Carbapenem,Cell wall (PBP),cidal,Biofilm; In Vivo,,Meropenem,1.0,Synergy
+OLD:41367424,A. baumannii,Polymyxin,Membrane (LPS),cidal,In Vivo,,Polymyxin B,1.0,Synergy
+OLD:41367424,A. baumannii,Carbapenem,Cell wall (PBP),cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,,Meropenem,0.0,Indifferent
+OLD:41367424,A. baumannii,Fluoroquinolone,DNA gyrase/topo IV,cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,,Ciprofloxacin,0.0,Indifferent
+OLD:41402443,P. aeruginosa,Carbapenem,Cell wall (PBP),cidal,Checkerboard,Simultaneous,Imipenem,1.0,Synergy
+OLD:41467804,A. baumannii,Carbapenem,Cell wall (PBP),cidal,Time-Kill,,Meropenem,1.0,Synergy
+OLD:41471203,P. aeruginosa,Cephalosporin,Cell wall (PBP),cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Ceftazidime,1.0,Synergy
+OLD:41471203,P. aeruginosa,Aminoglycoside,Protein synthesis (30S),cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Tobramycin,1.0,Synergy
+OLD:41471203,P. aeruginosa,Carbapenem,Cell wall (PBP),cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Meropenem,1.0,Synergy
+OLD:41471203,P. aeruginosa,Fluoroquinolone,DNA gyrase/topo IV,cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Ciprofloxacin,1.0,Synergy
+OLD:41471203,P. aeruginosa,Polymyxin,Membrane (LPS),cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Colistin,0.0,Antagonism
+OLD:41471203,P. aeruginosa,Penicillin,Cell wall (PBP),cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Piperacillin,1.0,Synergy
+OLD:41480547,A. baumannii,Polymyxin,Membrane (LPS),cidal,Checkerboard,Simultaneous,Polymyxin B,1.0,Synergy
+OLD:41480547,A. baumannii,Aminoglycoside,Protein synthesis (30S),cidal,Checkerboard,Simultaneous,Amikacin,1.0,Synergy
+OLD:41480547,A. baumannii,Fosfomycin,Cell wall (MurA),cidal,Checkerboard,Simultaneous,Fosfomycin,1.0,Synergy
+OLD:41513696,P. aeruginosa,Fluoroquinolone,DNA gyrase/topo IV,cidal,Time-Kill; Biofilm; In Vivo,Simultaneous,Levofloxacin,1.0,Synergy
+OLD:41543254,K. pneumoniae,Carbapenem,Cell wall (PBP),cidal,Checkerboard,Simultaneous,Meropenem,1.0,Synergy
+OLD:41551648,S. aureus,Fluoroquinolone,DNA gyrase/topo IV,cidal,Biofilm,Simultaneous,Ciprofloxacin,1.0,Synergy
+OLD:41551648,S. aureus,Aminoglycoside,Protein synthesis (30S),cidal,Biofilm,Simultaneous,Gentamicin,1.0,Synergy
+OLD:41551648,S. aureus,Rifamycin,RNA polymerase,cidal,Biofilm,Simultaneous,Rifampicin,0.0,Antagonism
+OLD:41551648,S. aureus,Lincosamide,Protein synthesis (50S),static,Biofilm,Simultaneous,Clindamycin,1.0,Synergy
+OLD:41551648,S. aureus,Lipopeptide,Membrane,cidal,Biofilm,Simultaneous,Daptomycin,0.0,Indifferent
+OLD:41589298,P. aeruginosa,Polymyxin,Membrane (LPS),cidal,Checkerboard,Simultaneous,Colistin,1.0,Synergy
+OLD:41589298,P. aeruginosa,Carbapenem,Cell wall (PBP),cidal,Checkerboard,Simultaneous,Meropenem,1.0,Synergy
+OLD:41589298,P. aeruginosa,Siderophore cephalosporin,Cell wall (PBP),cidal,Checkerboard,Simultaneous,Cefiderocol,1.0,Synergy
+OLD:41589298,P. aeruginosa,Cephalosporin/BLI,Cell wall (PBP),cidal,Checkerboard,Simultaneous,Ceftazidime-avibactam,1.0,Synergy
+OLD:41654550,K. pneumoniae,Carbapenem,Cell wall (PBP),cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Imipenem,1.0,Synergy
+OLD:41654550,K. pneumoniae,Carbapenem,Cell wall (PBP),cidal,Time-Kill,Simultaneous,Meropenem,1.0,Synergy
+OLD:41654550,K. pneumoniae,Cephalosporin,Cell wall (PBP),cidal,Time-Kill,Simultaneous,Ceftazidime,1.0,Synergy
+OLD:41654550,K. pneumoniae,Polymyxin,Membrane (LPS),cidal,Time-Kill,Simultaneous,Colistin,1.0,Synergy
+OLD:41654550,K. pneumoniae,Aminoglycoside,Protein synthesis (30S),cidal,Time-Kill,Simultaneous,Tobramycin,1.0,Synergy
+OLD:41654550,K. pneumoniae,Oxazolidinone,Protein synthesis (50S),static,Time-Kill,Simultaneous,Linezolid,1.0,Synergy
+OLD:41668450,A. baumannii,Amphenicol,Protein synthesis (50S),static,Time-Kill,Simultaneous,Chloramphenicol,1.0,Synergy
+OLD:41668450,A. baumannii,Polymyxin,Membrane (LPS),cidal,Checkerboard; Time-Kill; In Vivo,Simultaneous,Colistin,1.0,Synergy
+OLD:41680234,S. aureus,Glycopeptide,Cell wall (D-Ala-D-Ala),cidal,Checkerboard,Simultaneous,Vancomycin,1.0,Synergy
+OLD:41900309,P. aeruginosa,Aminoglycoside,Protein synthesis (30S),cidal,Checkerboard; Time-Kill; Biofilm,Simultaneous,Amikacin,1.0,Synergy
+OLD:41900309,P. aeruginosa,Carbapenem,Cell wall (PBP),cidal,Checkerboard,Simultaneous,Meropenem,1.0,Synergy
+OLD:41900309,P. aeruginosa,Cephalosporin,Cell wall (PBP),cidal,Checkerboard,Simultaneous,Ceftazidime,1.0,Synergy
+OLD:41900309,P. aeruginosa,Polymyxin,Membrane (LPS),cidal,Checkerboard,Simultaneous,Polymyxin B,1.0,Synergy
+OLD:41900309,P. aeruginosa,Fluoroquinolone,DNA gyrase/topo IV,cidal,Checkerboard,Simultaneous,Ciprofloxacin,1.0,Synergy
+OLD:41994204,A. baumannii,Polymyxin,Membrane (LPS),cidal,Checkerboard; Time-Kill,Simultaneous,Polymyxin B,1.0,Synergy
+OLD:42164869,S. aureus,Fluoroquinolone,DNA gyrase/topo IV,cidal,Biofilm,Simultaneous,Ciprofloxacin,1.0,Synergy
+OLD:42197340,A. baumannii,Carbapenem,Cell wall (PBP),cidal,In Vivo,Simultaneous,Meropenem,1.0,Synergy
+OLD:42197340,A. baumannii,Tetracycline,Protein synthesis (30S),static,Checkerboard; Biofilm; In Vivo,Simultaneous,Tigecycline,1.0,Synergy
+OLD:42231337,E. faecium,Glycopeptide,Cell wall (D-Ala-D-Ala),cidal,Checkerboard,Simultaneous,Vancomycin,1.0,Synergy
+OLD:42231337,E. faecium,Lipopeptide,Membrane,cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Daptomycin,1.0,Synergy
+OLD:42231337,E. faecium,Penicillin,Cell wall (PBP),cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Ampicillin,1.0,Synergy
+OLD:42231337,E. faecium,Penicillin,Cell wall (PBP),cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Piperacillin,1.0,Synergy
+OLD:42267543,S. aureus,Aminoglycoside,Protein synthesis (30S),cidal,Biofilm; In Vivo,Simultaneous,Gentamicin,1.0,Synergy
+OLD:42294707,A. baumannii,Carbapenem,Cell wall (PBP),cidal,In Vivo,Simultaneous,Meropenem,1.0,Synergy
+OLD:42353661,S. aureus,Fluoroquinolone,DNA gyrase/topo IV,cidal,Biofilm,Simultaneous,Ciprofloxacin,1.0,Synergy
+OLD:42482458,A. baumannii,Cephalosporin,Cell wall (PBP),cidal,Biofilm,Simultaneous,Ceftazidime,1.0,Synergy
+OLD:42554638,K. pneumoniae,Carbapenem,Cell wall (PBP),cidal,Checkerboard; Time-Kill; In Vivo,Simultaneous,Meropenem,1.0,Synergy
+OLD:42554638,K. pneumoniae,Cephalosporin,Cell wall (PBP),cidal,Checkerboard; Time-Kill; In Vivo,Simultaneous,Ceftazidime,1.0,Synergy
+OLD:42554638,K. pneumoniae,Polymyxin,Membrane (LPS),cidal,Checkerboard; Time-Kill; In Vivo,Simultaneous,Colistin,1.0,Synergy
+OLD:42663457,A. baumannii,Carbapenem,Cell wall (PBP),cidal,In Vivo,Simultaneous,Meropenem,1.0,Synergy
+OLD:42663457,A. baumannii,Fluoroquinolone,DNA gyrase/topo IV,cidal,In Vivo,Simultaneous,Ciprofloxacin,1.0,Synergy
+OLD:42663457,A. baumannii,Amphenicol,Protein synthesis (50S),static,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Chloramphenicol,1.0,Synergy
+OLD:42663457,A. baumannii,Polymyxin,Membrane (LPS),cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Colistin,1.0,Synergy
+OLD:42663457,A. baumannii,Rifamycin,RNA polymerase,cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Rifampicin,1.0,Synergy
+OLD:42666921,S. aureus,Fluoroquinolone,DNA gyrase/topo IV,cidal,Checkerboard,Simultaneous,Ciprofloxacin,1.0,Synergy
+OLD:42690138,K. pneumoniae,Aminoglycoside,Protein synthesis (30S),cidal,Biofilm,Simultaneous,Amikacin,1.0,Synergy
+OLD:42792069,A. baumannii,Cephalosporin,Cell wall (PBP),cidal,Checkerboard; Biofilm; In Vivo,Simultaneous,Ceftazidime,1.0,Synergy
+OLD:42847627,K. pneumoniae,Carbapenem,Cell wall (PBP),cidal,Time-Kill,Simultaneous,Meropenem,1.0,Synergy
+OLD:42847627,K. pneumoniae,Polymyxin,Membrane (LPS),cidal,Time-Kill,Simultaneous,Colistin,0.0,Indifferent
+OLD:42847627,K. pneumoniae,Fluoroquinolone,DNA gyrase/topo IV,cidal,Time-Kill,Simultaneous,Ciprofloxacin,1.0,Synergy
+OLD:42847627,K. pneumoniae,Aminoglycoside,Protein synthesis (30S),cidal,Time-Kill,Simultaneous,Gentamicin,0.0,Indifferent
+OLD:42847627,K. pneumoniae,Aminoglycoside,Protein synthesis (30S),cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Amikacin,1.0,Synergy
+OLD:42847627,K. pneumoniae,Tetracycline,Protein synthesis (30S),static,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Tigecycline,1.0,Synergy
+OLD:42847627,K. pneumoniae,Fluoroquinolone,DNA gyrase/topo IV,cidal,Checkerboard; Time-Kill; Biofilm; In Vivo,Simultaneous,Levofloxacin,1.0,Synergy
+NEW:A1,A. baumannii,ceftazidime,Cell wall (PBP),cidal,Checkerboard,simultaneous,ceftazidime,1.0,Synergy
+NEW:A1,A. baumannii,cefotaxime,Cell wall (PBP),cidal,Checkerboard,simultaneous,cefotaxime,1.0,Synergy
+NEW:A1,A. baumannii,cefiderocol,Cell wall (PBP),cidal,Checkerboard,simultaneous,cefiderocol,1.0,Synergy
+NEW:A1,A. baumannii,meropenem,Cell wall (PBP),cidal,Checkerboard,simultaneous,meropenem,0.0,Indifferent
+NEW:A5,K. pneumoniae,meropenem,Cell wall (PBP),cidal,Time-kill,simultaneous,meropenem,1.0,Synergy
+NEW:A5,K. pneumoniae,ciprofloxacin,DNA gyrase/topo IV,cidal,Time-kill,simultaneous,ciprofloxacin,1.0,Synergy
+NEW:A5,K. pneumoniae,ceftazidime,Cell wall (PBP),cidal,Time-kill,simultaneous,ceftazidime,0.0,Antagonism
+NEW:A5,K. pneumoniae,ampicillin,Cell wall (PBP),cidal,Time-kill,simultaneous,ampicillin,0.0,Indifferent
+NEW:A6,K. pneumoniae,kanamycin,Protein synthesis (30S),cidal,Biofilm,simultaneous,kanamycin,1.0,Synergy
+NEW:A7,K. pneumoniae,levofloxacin,DNA gyrase/topo IV,cidal,Time-kill,simultaneous,levofloxacin,1.0,Synergy
+NEW:A7,K. pneumoniae,meropenem,Cell wall (PBP),cidal,Time-kill,simultaneous,meropenem,1.0,Synergy
+NEW:A7,K. pneumoniae,gentamicin,Protein synthesis (30S),cidal,Time-kill,simultaneous,gentamicin,0.0,Indifferent
+NEW:A9,P. aeruginosa,ciprofloxacin,DNA gyrase/topo IV,cidal,Biofilm / in vivo,simultaneous,ciprofloxacin,1.0,Synergy
+NEW:A15,K. pneumoniae,amikacin,Protein synthesis (30S),cidal,Checkerboard / time-kill,simultaneous,amikacin,1.0,Synergy
+NEW:A15,K. pneumoniae,colistin,Membrane (LPS),cidal,Checkerboard,simultaneous,colistin,0.0,Indifferent
+NEW:A15,K. pneumoniae,imipenem,Cell wall (PBP),cidal,Checkerboard,simultaneous,imipenem,0.0,Indifferent
+NEW:A15,K. pneumoniae,ciprofloxacin,DNA gyrase/topo IV,cidal,Checkerboard,simultaneous,ciprofloxacin,0.0,Indifferent
+NEW:A15,K. pneumoniae,ceftazidime,Cell wall (PBP),cidal,Checkerboard,simultaneous,ceftazidime,0.0,Indifferent
+NEW:A20,A. baumannii,ampicillin-sulbactam,Cell wall (PBP),cidal,Time-kill,simultaneous,ampicillin-sulbactam,1.0,Synergy
+NEW:A20,A. baumannii,meropenem,Cell wall (PBP),cidal,Time-kill,simultaneous,meropenem,1.0,Synergy
+NEW:A20,A. baumannii,colistin,Membrane (LPS),cidal,Time-kill,simultaneous,colistin,1.0,Synergy
+NEW:A28,P. aeruginosa,meropenem,Cell wall (PBP),cidal,Checkerboard,phage-first,meropenem,1.0,Synergy
+NEW:A28,P. aeruginosa,colistin,Membrane (LPS),cidal,Checkerboard,phage-first,colistin,1.0,Synergy
