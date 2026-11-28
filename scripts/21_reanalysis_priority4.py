@@ -319,6 +319,17 @@ OUT["threshold_ladder"] = {">=20": 44, ">=18": 83, ">=16": 151,
 OUT["threshold_ladder_revised"] = {">=20": 48, ">=18": 93, ">=16": 167,
                                    ">=14": 282, ">=12": 440, ">=10": 660}
 
+# Preserve GEE results if they have already been computed, so that running
+# this script after 22_gee_reanalysis.py does not silently drop them.
+_gee = DATA / "gee_results.json"
+if _gee.exists():
+    try:
+        _g = json.loads(_gee.read_text())
+        OUT["gee_before"] = _g.get("published")
+        OUT["gee_after"] = _g.get("reanalysed")
+    except Exception:
+        pass
+
 (DATA / "reanalysis_results.json").write_text(json.dumps(OUT, indent=1))
 
 # --------------------------------------------------------------------------
